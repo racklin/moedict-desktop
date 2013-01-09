@@ -29,6 +29,7 @@
 		<command id="cmd_quitApplication" oncommand="window.close();"/>
 		<command id="cmd_close" oncommand="window.close();"/>
         <!-- TOOL -->
+        <command id="cmd_errorConsole" oncommand="MainUI.openErrorConsole();"/>
         <command id="cmd_addonsManager" oncommand="MainUI.openAddonsMgr();" />
         <command id="cmd_checkForUpdates" oncommand="MainUI.checkForUpdates();" />
 	</commandset>
@@ -83,6 +84,10 @@
 
                     <menu id="toolsMenu" label="&toolsMenu.label;" accesskey="&toolsMenu.accesskey;">
                         <menupopup id="menu_ToolsPopup">
+                            <menuitem id="javascriptConsole"
+                                      accesskey="&toolsErrorConsole.accesskey;"
+                                      label="&toolsErrorConsole.label;"
+                                      command="cmd_errorConsole"/>
                             <menuitem id="addonsManager"
                                       accesskey="&toolsAddonsManager.accesskey;"
                                       label="&toolsAddonsManager.label;"

@@ -1,20 +1,22 @@
 XULApp StarterKit
 -----------------------------
-XULApp StarterKit is a generic framework for XULRunner applications, like [Rich Client Platform].(http://en.wikipedia.org/wiki/Rich_client_platform)
+XULApp StarterKit is a generic framework for XULRunner applications, like [Rich Client Platform](http://en.wikipedia.org/wiki/Rich_client_platform) .
 
-It provides the "plumbing" that, before, every developer had to write themselves—saving state, connecting actions to menu items, toolbar items and keyboard shortcuts; window management, add-ons mechanism, update mechanism and so on.
+It provides the "plumbing" that, before, every developer had to write themselves—saving state, connecting actions to menu items, toolbar items and keyboard shortcuts;
+ window management, add-ons mechanism, update mechanism and so on.
 
 XULApp StarterKit provides a reliable and flexible application architecture.
-An architecture that encourages sustainable development practices. Because the XULApp StarterKit architecture is modular, it's easy to create applications that are robust and extensible.
+An architecture that encourages sustainable development practices. Because the XULApp StarterKit architecture is modular, it's easy to create applications that are ro
+bust and extensible.
 
 
 Included in the distribution package:
 
 * A minimal XUL application with a main skeleton window and an about dialog
 * Auto-load Modules by Preferences System.
-* Integrated [GREUtils]. (https://github.com/racklin/greutils)
-* Integrated [lodash]. (https://github.com/bestiejs/lodash)
-* A bundled [HTTP server] For HTML5 application or IPC. (https://developer.mozilla.org/en-US/docs/Httpd.js/HTTP_server_for_unit_tests)
+* Integrated [GREUtils](https://github.com/racklin/greutils) .
+* Integrated [lodash](https://github.com/bestiejs/lodash) .
+* A bundled [HTTP server](https://developer.mozilla.org/en-US/docs/Httpd.js/HTTP_server_for_unit_tests) For HTML5 application or IPC.
 * XULRunner 18 (Gecko 18)
 
 
@@ -24,7 +26,6 @@ XULApp StarterKit include a collection of build scripts for packaging a XULRunne
 bundles for Mac, Windows, and Linux.
 
 Build Scripts is based on [Zotero Standalone build utility](https://github.com/zotero/zotero-standalone-build).
-Using sed instead of perl.
 
 
 Benefits
@@ -48,7 +49,8 @@ Benefits
 Get started
 -----------------------------
 Build XULApp StarterKit for your application:
-1. Fork this project and checkout.
+
+1. Fork this project.
 2. Change BUILD_MAC / BUILD_LINUX / BUILD_WIN32 variables in config.sh to setting operating systems you want to build.
 3. Change Profile variable in config.sh to specifies the path to use for the application's profile. [XUL Application Packaging](https://developer.mozilla.org/en-US/docs/XUL_Application_Packaging)
 4. Customize branding and metadata to your liking.
@@ -59,20 +61,49 @@ Build XULApp StarterKit for your application:
 Make your own application
 -----------------------------
 ### Application in XULApp StarterKit Project
-Put your XUL files in app/ directory and modify app/chrome/content/xulapp/xulapp.xul
+
+app/ directory contains standard XULRunner application structure.
+Put your application files in app/ directory and modify app/chrome/content/xulapp/xulapp.xul main window.
 
 ### Application as First Add-on (Recommended)
+
 Make your application as add-on and install to XULApp StarterKit.
 This will make your application more flexible.
+
+Example Application Add-ons:
+
+
+Auto-Load Modules
+-----------------------------
+Register Your Modules in prefs.js , XULApp StarterKit Will auto-load when startup.
+All Modules 's variables will in *XULApp* scope.
+
+#### Register Notication Modules Example
+In prefs.js Add:
+
+```
+pref("xulapp.modules.notification", "chrome://xulapp/content/modules/notification.js");
+```
+
+Now, You can using Notication Service from any pages.
+
+```
+var Notification = XULApp.Notification;
+Notification.showNotication('Title', 'Text');
+```
 
 
 Tips
 -----------------------------
 ### Generating icons
-Use [http://iconverticons.com/](http://iconverticons.com/) to generate app icons for all platforms. Put your source image in icons/default/source folder and the generated images in the icons/default folder.
+Use [http://iconverticons.com/](http://iconverticons.com/) to generate app icons for all platforms. Put your source image in icons/default/source folder and the gener
+ated images in the icons/default folder.
+
 
 
 License
 -----------------------------
 XULApp StarterKit are licensed under the [MIT License](http://opensource.org/licenses/MIT).
 See LICENSE.TXT for more details.
+
+

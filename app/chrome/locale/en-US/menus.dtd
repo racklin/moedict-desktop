@@ -33,6 +33,8 @@
 <!--TOOLS MENU-->
 <!ENTITY toolsMenu.label           "Tools">
 <!ENTITY toolsMenu.accesskey       "T">
+<!ENTITY toolsErrorConsole.label      "Error Console">
+<!ENTITY toolsErrorConsole.accesskey  "E">
 <!ENTITY toolsAddonsManager.label      "Add-ons Manager">
 <!ENTITY toolsAddonsManager.accesskey  "A">
 

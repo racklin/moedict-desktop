@@ -35,4 +35,21 @@ const MainUI = new function() {
         window.openDialog(EMURL, 'addonsManager', EMFEATURES);
     }
 
+    /**
+     * opens the error console
+     */
+    this.openErrorConsole = function() {
+        const EMTYPE = "global:console";
+        var wm = Components.classes["@mozilla.org/appshell/window-mediator;1"]
+            .getService(Components.interfaces.nsIWindowMediator);
+        var theEM = wm.getMostRecentWindow(EMTYPE);
+        if (theEM) {
+            theEM.focus();
+            return;
+        }
+
+        const EMURL = "chrome://global/content/console.xul";
+        const EMFEATURES = "chrome,menubar,extra-chrome,toolbar,dialog=no,resizable";
+        window.openDialog(EMURL, 'errorConsole', EMFEATURES);
+    }
 }
