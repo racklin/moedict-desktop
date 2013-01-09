@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>xulapp</string>
+	<key>CFBundleGetInfoString</key>
+	<string>XULApp StarterKit {{VERSION}}, © 2012 Contributors</string>
+	<key>CFBundleIconFile</key>
+	<string>xulapp</string>
+	<key>CFBundleIdentifier</key>
+	<string>org.xulapp.starterkit</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>XULApp StarterKit</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>{{VERSION}}</string>
+	<key>CFBundleSignature</key>
+	<string>WAXW</string>
+	<key>CFBundleVersion</key>
+	<string>{{VERSION_NUMERIC}}</string>
+	<key>NSAppleScriptEnabled</key>
+	<true/>
+	<key>CGDisableCoalescedUpdates</key>
+	<true/>
+	<key>NSHighResolutionCapable</key>
+	<true/>
+	<key>LSMinimumSystemVersion</key>
+	<string>10.6.3</string>
+	<key>LSMinimumSystemVersionByArchitecture</key>
+	<dict>
+		<key>i386</key>
+		<string>10.6.3</string>
+		<key>x86_64</key>
+		<string>10.6.3</string>
+	</dict>
+</dict>
+</plist>

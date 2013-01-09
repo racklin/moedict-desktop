@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://xulapp/skin/about.css" type="text/css"?>
+<!DOCTYPE window [
+	<!ENTITY % aboutDTD SYSTEM "chrome://xulapp/locale/about.dtd"> %aboutDTD;
+	<!ENTITY % brandDTD SYSTEM "chrome://branding/locale/brand.dtd" > %brandDTD;
+]>
+
+<dialog
+	id="xulapp-about"
+    title="&about.titleLabel;"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	orient="vertical"
+	buttons="accept"
+	buttonlabelaccept="&about.closeLabel;"
+	onload="sizeToContent();moveToAlertPosition();"
+	ondialogaccept="return true;">
+
+	<script src="init.js"/>
+	<script src="helpers.js"/>
+
+	<vbox id="aboutcontent">
+		<label id="name" value="&brandShortName;"/>
+		<hbox>
+			<label class="app-text-link url" href="&vendorUrl;" value="&vendorUrl;" onclick="gotoUrl('&vendorUrl;')"/>
+		</hbox>
+		<label id="copyright" value="&logoCopyright;"/>
+	</vbox>
+</dialog>

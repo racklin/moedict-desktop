@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE overlay [
+<!ENTITY % brandDTD SYSTEM "chrome://branding/locale/brand.dtd">
+%brandDTD;
+<!ENTITY % menusDTD SYSTEM "chrome://xulapp/locale/menus.dtd" >
+%menusDTD;
+]>
+<overlay id="menuOverlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+    <menupopup id="menu_FilePopup">
+		<!--<menuseparator/>-->
+		<menuitem id="menu_FileQuitItem"
+				label="&quitApplicationCmd.label;"
+				key="key_quitApplication"
+				command="cmd_quitApplication"/>
+    </menupopup>
+</overlay>

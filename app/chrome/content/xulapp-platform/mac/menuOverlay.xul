@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE overlay [
+<!ENTITY % brandDTD SYSTEM "chrome://branding/locale/brand.dtd">
+%brandDTD;
+<!ENTITY % menusDTD SYSTEM "chrome://xulapp/locale/menus.dtd" >
+%menusDTD;
+]>
+<overlay id="menuOverlay"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+    <script type="application/javascript" src="chrome://global/content/macWindowMenu.js"/>
+
+	<commandset id="mainCommandSet">
+		<command id="minimizeWindow"
+				label="&minimizeWindow.label;"
+				oncommand="window.minimize();" />
+	</commandset>
+
+	<keyset id="mainKeyset">
+		<key id="key_minimizeWindow"
+				command="minimizeWindow"
+				key="&minimizeWindow.key;"
+				modifiers="accel"/>
+		<key id="key_openHelpMac"
+				oncommand="App.openHelp();"
+				key="&helpMac.commandkey;"
+				modifiers="accel"/>
+
+		<!-- These are used to build the Application menu under Cocoa widgets -->
+		<key id="key_preferencesCmdMac"
+				key="&preferencesCmdMac.commandkey;"
+				modifiers="accel"/>
+		<key id="key_hideThisAppCmdMac"
+				key="&hideThisAppCmdMac.commandkey;"
+				modifiers="accel"/>
+		<key id="key_hideOtherAppsCmdMac"
+				key="&hideOtherAppsCmdMac.commandkey;"
+				modifiers="accel,alt"/>
+		<key id="key_quitApplication"
+				key="&quitApplicationCmdMac.key;"
+				command="cmd_quitApplication"
+				modifiers="accel"/>
+	</keyset>
+
+    <menupopup id="menu_FilePopup">
+		<menuitem id="menu_close" label="&closeCmd.label;" key="key_close"
+				accesskey="&closeCmd.accesskey;" command="cmd_close"/>
+        <menuitem id="menu_mac_services"
+				label="&servicesMenuMac.label;"/>
+        <menuitem id="menu_mac_hide_app"
+				label="&hideThisAppCmdMac.label;"
+				key="key_hideThisAppCmdMac"/>
+        <menuitem id="menu_mac_hide_others"
+				label="&hideOtherAppsCmdMac.label;"
+				key="key_hideOtherAppsCmdMac"/>
+        <menuitem id="menu_mac_show_all"
+				label="&showAllAppsCmdMac.label;"/>
+		<menuitem id="menu_FileQuitItem"
+				label="&quitApplicationCmdMac.label;"
+				key="key_quitApplication"
+				command="cmd_quitApplication"/>
+    </menupopup>
+
+    <menu id="windowMenu"
+			label="&windowMenu.label;"
+			datasources="rdf:window-mediator" ref="NC:WindowMediatorRoot"
+			onpopupshowing="macWindowMenuDidShow();"
+			hidden="false">
+		<template>
+			<rule>
+				<menupopup>
+					<menuitem uri="rdf:*"
+							label="rdf:http://home.netscape.com/NC-rdf#Name"
+							type="radio"
+							name="windowList"
+							oncommand="ShowWindowFromResource(event.target)"/>
+				</menupopup>
+			</rule>
+		</template>
+        <menupopup id="menu_windowPopup">
+            <menuitem command="minimizeWindow" label="&minimizeWindow.label;" key="key_minimizeWindow"/>
+            <!-- decomment when "BringAllToFront" is implemented
+                <menuseparator/>
+                <menuitem label="&bringAllToFront.label;" disabled="true"/> -->
+            <menuseparator id="sep-window-list"/>
+        </menupopup>
+    </menu>
+</overlay>
