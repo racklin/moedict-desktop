@@ -46,6 +46,12 @@ Benefits
 * Registrable modules from preferences system, you can install modules by add-ons.
 
 
+Download Pre-build Binary
+-----------------------------
+Download Pre-build XULApp Starterkit in [downloads](https://github.com/racklin/xulapp-starterkit/tree/master/downloads) .
+Supports MacOSX / Linux i686 / Linux x86_64 / Win32
+
+
 Get started
 -----------------------------
 Build XULApp StarterKit for your application:
