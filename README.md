@@ -66,24 +66,25 @@ Build XULApp StarterKit for your application:
 
 Make your own application
 -----------------------------
-## Application in XULApp StarterKit Project
+### Application in XULApp StarterKit Project
 
 app/ directory contains standard XULRunner application structure.
 Put your application files in app/ directory and modify app/chrome/content/xulapp/xulapp.xul main window.
 
-## Application as First Add-on (Recommended)
+### Application as First Add-on (Recommended)
 
 Make your application as add-on and install to XULApp StarterKit.
 This will make your application more flexible.
 
-### Example Application Add-ons:
+### Example Application Add-ons For XULApp StarterKit:
 * [HTML5 Webapp Wrapper](https://github.com/racklin/xulapp-starterkit-app-webapp-wrapper).
     * Wrap and Packaging your HTML5 Web Application to XPI add-on.
     * PhoneGap Like.
 * [XUL Periodic Table](https://github.com/racklin/xulapp-starterkit-app-xul-periodic-table).
 
-### Example and Useful Add-ons:
+### Example and Useful Add-ons For XULApp StarterKit:
 * [SQLite Manager 0.7.7](https://github.com/racklin/xulapp-starterkit-addon-sqlitemanager).
+* [DOM Inspector 2.0.12](https://github.com/racklin/xulapp-starterkit-addon-dominspector).
 
 Auto-Load Modules
 -----------------------------
