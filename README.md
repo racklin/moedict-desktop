@@ -46,6 +46,12 @@ Benefits
 * Registrable modules from preferences system, you can install modules by add-ons.
 
 
+Download Pre-build Binary
+-----------------------------
+Download Pre-build XULApp Starterkit in [downloads](https://github.com/racklin/xulapp-starterkit/tree/master/downloads) .
+Supports MacOSX / Linux i686 / Linux x86_64 / Win32
+
+
 Get started
 -----------------------------
 Build XULApp StarterKit for your application:
@@ -70,8 +76,15 @@ Put your application files in app/ directory and modify app/chrome/content/xulap
 Make your application as add-on and install to XULApp StarterKit.
 This will make your application more flexible.
 
-Example Application Add-ons:
+### Example Application Add-ons For XULApp StarterKit:
+* [HTML5 Webapp Wrapper](https://github.com/racklin/xulapp-starterkit-app-webapp-wrapper).
+    * Wrap and Packaging your HTML5 Web Application to XPI add-on.
+    * PhoneGap Like.
+* [XUL Periodic Table](https://github.com/racklin/xulapp-starterkit-app-xul-periodic-table).
 
+### Example and Useful Add-ons For XULApp StarterKit:
+* [SQLite Manager 0.7.7](https://github.com/racklin/xulapp-starterkit-addon-sqlitemanager).
+* [DOM Inspector 2.0.12](https://github.com/racklin/xulapp-starterkit-addon-dominspector).
 
 Auto-Load Modules
 -----------------------------
@@ -103,7 +116,6 @@ ated images in the icons/default folder.
 
 License
 -----------------------------
-XULApp StarterKit are licensed under the [MIT License](http://opensource.org/licenses/MIT).
+XULApp StarterKit are licensed under the [MPL License](http://mozilla.org/mpl/2.0/).
 See LICENSE for more details.
-
 
