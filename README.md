@@ -76,13 +76,20 @@ Download pre-built XULApp StarterKit (or your own build) and make your applicati
 This will make your application more flexible.
 
 
+How to install Add-ons 
+-----------------------------
+Launch XULApp StarterKit and install add-on with 'Tools'->'Add-ons Manager'.
+
+Detail: [How to install Add-ons](https://github.com/racklin/xulapp-starterkit/wiki/How-to-install-Add-ons) wiki.
+
+
 HTML5, CSS3 and JavaScript
 -----------------------------
 Don't need to learn XUL or XULRunner. XULApp StarterKit help you for creating beautiful desktop apps using your web development skills.
 ####  How-to
 1. Download pre-built XULApp StarterKit
 2. Download sample application for XULApp StarterKit
-3. Launch XULApp StarterKit and install add-on with 'Tools'->'Add-ons Manager'.
+3. Launch XULApp StarterKit and install add-on with 'Add-ons Manager'.
 
 #### Sample Application Add-ons For XULApp StarterKit:
 * [HTML5 Webapp Wrapper](https://github.com/racklin/xulapp-starterkit-app-webapp-wrapper).
