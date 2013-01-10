@@ -14,6 +14,16 @@ this.Notification = new function() {
     var worker = Services.tm.mainThread;
     var notificationService = Components.classes["@mozilla.org/alerts-service;1"].getService(Components.interfaces.nsIAlertsService);
 
+    this.__exposedProps__ = {
+        showNotification: "r",
+        trace: "r",
+        debug: "r",
+        info: "r",
+        warn: "r",
+        error: "r",
+        fatal: "r"
+    };
+
     this.showNotification = function(title, text, image, textClickable, cookie, alertListener, name) {
 
         image = image || "";

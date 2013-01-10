@@ -7,6 +7,7 @@ skin		xulapp	default		chrome/skin/default/
 
 component	{b0c32b3c-5964-11e2-90a5-000c29636bba}			components/xulapp-service.js
 contract	@xulapp-starterkit/xulapp-service;1			{b0c32b3c-5964-11e2-90a5-000c29636bba}
+category    JavaScript-global-property XULApp @xulapp-starterkit/xulapp-service;1
 
 locale	branding en-US		chrome/branding/locale/
 content	branding		chrome/branding/content/

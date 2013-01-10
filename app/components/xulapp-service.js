@@ -41,11 +41,16 @@ function makeXULAppContext() {
         zContext = new XULAppContext();
         zContext.XULApp = {};
     }
+
+    zContext.XULApp.__exposedProps__ = {};
+
     // setting free variable 'global' for XULApp
     zContext.XULApp['global'] = zContext.XULApp;
 
     // Load GREUtils first
     loadSubScript('chrome://xulapp/content/modules/GREUtils.js', zContext.XULApp);
+    zContext.XULApp.__exposedProps__.GREUtils = "r";
+
     var GREUtils = zContext.XULApp.GREUtils;
 
     // Get 3rd-party registered modules
@@ -56,13 +61,21 @@ function makeXULAppContext() {
     prefXULAppBranch.getChildList('modules').forEach(function(key) {
         var moduleUrl = GREUtils.Pref.getPref(key, prefXULAppBranch);
         try {
+            delete zContext.XULApp['EXPORTED_SYMBOLS'];
             loadSubScript(moduleUrl, zContext.XULApp);
+
+            // automatic added __exposedProps__ for module
+            if(zContext.XULApp['EXPORTED_SYMBOLS'] && zContext.XULApp['EXPORTED_SYMBOLS'].length >0) {
+                zContext.XULApp['EXPORTED_SYMBOLS'].forEach(function(exportSymbol) {
+                    zContext.XULApp.__exposedProps__[exportSymbol] = "r";
+                });
+            }
+
         } catch (e) {
             consoleLog("Error loading module: " +moduleUrl, zContext);
             dump("Error loading module: " +moduleUrl + "\n");
         }
     });
-
 
 }
 
@@ -94,7 +107,12 @@ XULAppService.prototype = {
 	contractID: '@xulapp-starterkit/xulapp-service;1',
 	classDescription: 'XULApp Service',
 	classID: Components.ID('{b0c32b3c-5964-11e2-90a5-000c29636bba}'),
-	QueryInterface: XPCOMUtils.generateQI([Components.interfaces.nsISupports])
+	QueryInterface: XPCOMUtils.generateQI([Ci.nsIDOMGlobalPropertyInitializer, Ci.nsISupports]) ,
+
+
+    init: function (aWindow) {
+        return zContext.XULApp;
+    }
 }
 
 /**

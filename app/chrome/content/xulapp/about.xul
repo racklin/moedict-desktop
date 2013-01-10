@@ -16,7 +16,6 @@
 	onload="sizeToContent();moveToAlertPosition();"
 	ondialogaccept="return true;">
 
-	<script src="init.js"/>
 	<script src="helpers.js"/>
 
 	<vbox id="aboutcontent">

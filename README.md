@@ -50,7 +50,7 @@ Get started
 -----------------------------
 Build XULApp StarterKit for your application:
 
-1. Fork this project.
+1. Fork this project and checkout.
 2. Change BUILD_MAC / BUILD_LINUX / BUILD_WIN32 variables in config.sh to setting operating systems you want to build.
 3. Change Profile variable in config.sh to specifies the path to use for the application's profile. [XUL Application Packaging](https://developer.mozilla.org/en-US/docs/XUL_Application_Packaging)
 4. Customize branding and metadata to your liking.
@@ -104,6 +104,6 @@ ated images in the icons/default folder.
 License
 -----------------------------
 XULApp StarterKit are licensed under the [MIT License](http://opensource.org/licenses/MIT).
-See LICENSE.TXT for more details.
+See LICENSE for more details.
 
 
