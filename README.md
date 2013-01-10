@@ -64,32 +64,48 @@ Build XULApp StarterKit for your application:
 6. run build.sh
 
 
-Make your own application
+Make your own application in XULApp StarterKit Project
 -----------------------------
-### Application in XULApp StarterKit Project
-
 app/ directory contains standard XULRunner application structure.
 Put your application files in app/ directory and modify app/chrome/content/xulapp/xulapp.xul main window.
 
-### Application as First Add-on (Recommended)
 
-Make your application as add-on and install to XULApp StarterKit.
+Make your own application as First Add-on (Recommended)
+-----------------------------
+Download pre-built XULApp StarterKit (or your own build) and make your application as add-on and install to XULApp StarterKit.
 This will make your application more flexible.
 
-### Example Application Add-ons For XULApp StarterKit:
+
+HTML5, CSS3 and JavaScript
+-----------------------------
+Don't need to learn XUL or XULRunner. XULApp StarterKit help you for creating beautiful desktop apps using your web development skills.
+####  How-to
+1. Download pre-built XULApp StarterKit
+2. Download sample application for XULApp StarterKit
+3. Launch XULApp StarterKit and install add-on with 'Tools'->'Add-ons Manager'.
+
+#### Sample Application Add-ons For XULApp StarterKit:
 * [HTML5 Webapp Wrapper](https://github.com/racklin/xulapp-starterkit-app-webapp-wrapper).
     * Wrap and Packaging your HTML5 Web Application to XPI add-on.
     * PhoneGap Like.
+* [TodoMVC](https://github.com/racklin/xulapp-starterkit-app-todomvc).
+    * Trying Backbone, Ember, AngularJS, Spine... the list of new and stable solutions on XULApp StarterKit.
+    * Helping you select an MV* framework.
 * [XUL Periodic Table](https://github.com/racklin/xulapp-starterkit-app-xul-periodic-table).
+    * XUL Tutorial
 
-### Example and Useful Add-ons For XULApp StarterKit:
+
+Useful Add-ons For XULApp StarterKit
+-----------------------------
 * [SQLite Manager 0.7.7](https://github.com/racklin/xulapp-starterkit-addon-sqlitemanager).
 * [DOM Inspector 2.0.12](https://github.com/racklin/xulapp-starterkit-addon-dominspector).
+
 
 Auto-Load Modules
 -----------------------------
 Register Your Modules in prefs.js , XULApp StarterKit Will auto-load when startup.
 All Modules 's variables will in *XULApp* scope.
+
 
 #### Register Notication Modules Example
 In prefs.js Add:
@@ -118,4 +134,5 @@ License
 -----------------------------
 XULApp StarterKit are licensed under the [MPL License](http://mozilla.org/mpl/2.0/).
 See LICENSE for more details.
+
 
