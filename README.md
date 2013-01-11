@@ -48,8 +48,12 @@ Benefits
 
 Download Pre-build Binary
 -----------------------------
-Download Pre-build XULApp Starterkit in [downloads](https://github.com/racklin/xulapp-starterkit/tree/master/downloads) .
-Supports MacOSX / Linux i686 / Linux x86_64 / Win32
+Download Pre-build XULApp Starterkit.
+
+[MacOSX Version](https://s3.amazonaws.com/xulapp/starter-kit/1.1.0/xulapp-starterkit-1.1.0.0abc607.dmg)
+[Windows 32](https://s3.amazonaws.com/xulapp/starter-kit/1.1.0/xulapp-starterkit-1.1.0.0abc607-win32.zip)
+[Linux i686](https://s3.amazonaws.com/xulapp/starter-kit/1.1.0/xulapp-starterkit-1.1.0.0abc607-linux-i686.tar.bz2)
+[Linux x86_64](https://s3.amazonaws.com/xulapp/starter-kit/1.1.0/xulapp-starterkit-1.1.0.0abc607-linux-x86_64.tar.bz2)
 
 
 Build XULApp StarterKit (Optional)
@@ -77,7 +81,7 @@ Download pre-built XULApp StarterKit (or your own build) and make your applicati
 This will make your application more flexible.
 
 
-How to install Add-ons 
+How to install Add-ons
 -----------------------------
 Launch XULApp StarterKit and install add-on with 'Tools'->'Add-ons Manager'.
 
