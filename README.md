@@ -104,8 +104,10 @@ Don't need to learn XUL or XULRunner. XULApp StarterKit help you for creating be
 
 Useful Add-ons For XULApp StarterKit
 -----------------------------
-* [SQLite Manager 0.7.7](https://github.com/racklin/xulapp-starterkit-addon-sqlitemanager).
-* [DOM Inspector 2.0.12](https://github.com/racklin/xulapp-starterkit-addon-dominspector).
+* [NodeJS v0.8.17 Runtime For XULApp StarterKit](https://github.com/racklin/xulapp-starterkit-addon-nodejs).
+  * Running NodeJS Tools or Applications in XULRunner , here it is.
+* [SQLite Manager 0.7.7 For XULApp StarterKit](https://github.com/racklin/xulapp-starterkit-addon-sqlitemanager).
+* [DOM Inspector 2.0.12 For XULApp StarterKit](https://github.com/racklin/xulapp-starterkit-addon-dominspector).
 
 
 Auto-Load Modules
