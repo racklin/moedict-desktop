@@ -52,9 +52,9 @@ Download Pre-build XULApp Starterkit in [downloads](https://github.com/racklin/x
 Supports MacOSX / Linux i686 / Linux x86_64 / Win32
 
 
-Get started
+Build XULApp StarterKit (Optional)
 -----------------------------
-Build XULApp StarterKit for your application:
+Build your own branding XULApp StarterKit
 
 1. Fork this project and checkout.
 2. Change BUILD_MAC / BUILD_LINUX / BUILD_WIN32 variables in config.sh to setting operating systems you want to build.
@@ -67,7 +67,8 @@ Build XULApp StarterKit for your application:
 Make your own application in XULApp StarterKit Project
 -----------------------------
 app/ directory contains standard XULRunner application structure.
-Put your application files in app/ directory and modify app/chrome/content/xulapp/xulapp.xul main window.
+1. Put your application files in app/ directory and modify app/chrome/content/xulapp/xulapp.xul main window.
+2. Build XULApp StarterKit.
 
 
 Make your own application as First Add-on (Recommended)
