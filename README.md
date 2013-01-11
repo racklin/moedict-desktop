@@ -50,10 +50,10 @@ Download Pre-build Binary
 -----------------------------
 Download Pre-build XULApp Starterkit.
 
-[MacOSX Version](https://s3.amazonaws.com/xulapp/starter-kit/1.1.0/xulapp-starterkit-1.1.0.0abc607.dmg)
-[Windows 32](https://s3.amazonaws.com/xulapp/starter-kit/1.1.0/xulapp-starterkit-1.1.0.0abc607-win32.zip)
-[Linux i686](https://s3.amazonaws.com/xulapp/starter-kit/1.1.0/xulapp-starterkit-1.1.0.0abc607-linux-i686.tar.bz2)
-[Linux x86_64](https://s3.amazonaws.com/xulapp/starter-kit/1.1.0/xulapp-starterkit-1.1.0.0abc607-linux-x86_64.tar.bz2)
+* [MacOSX Version](https://s3.amazonaws.com/xulapp/starter-kit/1.1.0/xulapp-starterkit-1.1.0.0abc607.dmg)
+* [Windows 32](https://s3.amazonaws.com/xulapp/starter-kit/1.1.0/xulapp-starterkit-1.1.0.0abc607-win32.zip)
+* [Linux i686](https://s3.amazonaws.com/xulapp/starter-kit/1.1.0/xulapp-starterkit-1.1.0.0abc607-linux-i686.tar.bz2)
+* [Linux x86_64](https://s3.amazonaws.com/xulapp/starter-kit/1.1.0/xulapp-starterkit-1.1.0.0abc607-linux-x86_64.tar.bz2)
 
 
 Build XULApp StarterKit (Optional)
