@@ -105,6 +105,8 @@ Don't need to learn XUL or XULRunner. XULApp StarterKit help you for creating be
     * Helping you select an MV* framework.
 * [XUL Periodic Table](https://github.com/racklin/xulapp-starterkit-app-xul-periodic-table).
     * XUL Tutorial
+* [Hello-Demo](https://github.com/racklin/xulapp-starterkit-app-hello-demo)
+    * This demos show you how add-on can help you make your application more flexiable and more concise and updatable.
 
 
 Useful Add-ons For XULApp StarterKit
