@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+
+<overlay id="moeDictMainUIOverlay"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+
+    <script type="application/javascript" src="mozStorageAPI.js"/>
+    <script type="application/javascript" src="moeDictDatabase.js"/>
+    <script type="application/javascript" src="moeDictMainUI.js"/>
+
+
+    <vbox id="appcontent" flex="1">
+
+        <hbox id="search-container">
+            <textbox id="search-keyword" size="20" type="search" searchbutton="true" oncommand="MoeDictMainUI.searchDict()"/>
+            <label value="ex. 混 or 混*" />
+        </hbox>
+
+        <hbox id="content-container" flex="1">
+
+                <vbox id="entry-list-container" width="200">
+                    <groupbox flex="1">
+                        <caption id="entry-list-caption" label="" />
+
+                        <richlistbox id="entry-list" flex="1" onselect="MoeDictMainUI.entryListItemSelected(event);">
+                        </richlistbox>
+
+                    </groupbox>
+                </vbox>
+                <splitter collapse="before" resizeafter="farthest">
+                    <grippy/>
+                </splitter>
+                <vbox flex="1" id="entry-detail-container">
+                    <hbox>
+                        <vbox>
+                            <caption id="entry-detail-caption" style="font-size: 48px;"/>
+                        </vbox>
+                        <vbox>
+                            <label id="entry-detail-bopomofo" />
+                            <label id="entry-detail-bopomofo2" />
+                            <label id="entry-detail-pinyin" />
+                        </vbox>
+                    </hbox>
+                    <vbox flex="1" id="entry-detail-definitions">
+
+                    </vbox>
+                </vbox>
+
+        </hbox>
+
+    </vbox>
+
+</overlay>

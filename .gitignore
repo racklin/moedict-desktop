@@ -2,3 +2,4 @@ xulrunner
 staging
 dist
 .idea
+app/databases/

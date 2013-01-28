@@ -16,7 +16,7 @@
 				xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
 				windowtype="XULApp:Main"
 				title="&brandShortName;"
-				width="1040" height="700"
+				width="960" height="600"
 				persist="screenX screenY width height sizemode">
 	<script type="application/javascript" src="xulapp.js"/>
 	<script type="application/javascript" src="chrome://global/content/globalOverlay.js"/>

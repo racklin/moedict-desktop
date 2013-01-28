@@ -34,7 +34,7 @@ SIGNATURE_URL='https://www.example.com/'
 # If version is not specified on the command line, version is this prefix followed by the revision
 DEFAULT_VERSION_PREFIX="1.1.0."
 # Numeric version for OS X bundle
-VERSION_NUMERIC="1.1.0"
+VERSION_NUMERIC="0.1.0"
 
 # Directory for building
 BUILDDIR="/tmp/xulapp-build-`uuidgen | head -c 8`"
@@ -48,11 +48,11 @@ STAGEDIR="$CALLDIR/staging"
 DISTDIR="$CALLDIR/dist"
 
 # App name
-APPNAME="XULApp StarterKit"
-PACKAGENAME="xulapp-starterkit"
+APPNAME="Moe Dictionary"
+PACKAGENAME="moe-dict.app"
 
 # Packages url (used for update packaging)
 PACKAGESURL="http://www.example.com/app/packages"
 
 # Specifies the path to use for the application's profile, based within the user's application data directory
-PROFILE="xulapp-starterkit"
+PROFILE="moe-dict"

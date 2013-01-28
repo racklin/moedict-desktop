@@ -7,15 +7,15 @@
 	<key>CFBundleExecutable</key>
 	<string>xulapp</string>
 	<key>CFBundleGetInfoString</key>
-	<string>XULApp StarterKit {{VERSION}}, © 2012 Contributors</string>
+	<string>Moe Dictionary {{VERSION}}, © 2013 Contributors</string>
 	<key>CFBundleIconFile</key>
 	<string>xulapp</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.xulapp.starterkit</string>
+	<string>org.xulapp.moedict</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>XULApp StarterKit</string>
+	<string>Moe Dictionary</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
