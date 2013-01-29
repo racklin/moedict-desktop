@@ -4,6 +4,9 @@ SITE="http://kcwu.csie.org/~kcwu/tmp/moedict/development.sqlite3.bz2"
 
 CALLDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+if [ ! -d $CALLDIR/app/databases ]; then
+  mkdir $CALLDIR/app/databases
+fi
 cd $CALLDIR/app/databases
 
 # curl -O $SITE
