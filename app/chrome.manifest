@@ -14,4 +14,3 @@ content	branding		chrome/branding/content/
 
 overlay chrome://xulapp/content/xulapp.xul chrome://xulapp/content/moeDictMainUI.xul
 
-resource moedict-databases databases/

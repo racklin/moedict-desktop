@@ -1,14 +1,17 @@
+this.EXPORTED_SYMBOLS  = ['MoeDictDatabase'];
+
 Components.utils.import("resource://gre/modules/Services.jsm");
 Components.utils.import("resource://gre/modules/FileUtils.jsm");
 
 /**
  * MoeDict Model
  */
-const MoeDictDatabase = new function() {
+this.MoeDictDatabase = new function() {
 
     this._URL = "resource://moedict-databases/development.sqlite3";
 
     this._connection = null;
+
 
 
     this.getConnection = function() {
@@ -32,7 +35,7 @@ const MoeDictDatabase = new function() {
 
         var conn = this.getConnection();
 
-        var sql = "SELECT e.title, h.id, h.bopomofo, h.bopomofo2, h.pinyin FROM entries e INNER JOIN heteronyms h ON(e.id=h.entry_id) WHERE title like '"+title+"' LIMIT 50";
+        var sql = "SELECT e.title, h.id, h.bopomofo, h.bopomofo2, h.pinyin FROM entries e INNER JOIN heteronyms h ON(e.id=h.entry_id) WHERE title like '"+title+"' LIMIT 100";
 
         var result = MozStorageAPI.query(conn, sql);
 

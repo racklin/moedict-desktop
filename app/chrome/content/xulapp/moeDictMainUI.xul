@@ -5,8 +5,6 @@
          xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
 
-    <script type="application/javascript" src="mozStorageAPI.js"/>
-    <script type="application/javascript" src="moeDictDatabase.js"/>
     <script type="application/javascript" src="moeDictMainUI.js"/>
 
 

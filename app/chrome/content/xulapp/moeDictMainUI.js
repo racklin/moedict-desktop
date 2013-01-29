@@ -4,12 +4,14 @@
 const MoeDictMainUI = new function() {
 
     var _ = XULApp._;
+    var MoeDictDatabase = XULApp.MoeDictDatabase;
 
     this.searchDict = function() {
 
         var keyword = document.getElementById('search-keyword').value;
 
         keyword = keyword.replace('*', '%');
+
         var result = MoeDictDatabase.searchByTitle(keyword);
 
         this.resetList();

@@ -2,4 +2,4 @@ xulrunner
 staging
 dist
 .idea
-app/databases/
+app/extensions/{213aaa92-69e7-11e2-83c0-68a86d302c50}/databases/
