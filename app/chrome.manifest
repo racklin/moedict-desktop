@@ -2,6 +2,9 @@ content	xulapp				chrome/content/xulapp/
 content	xulapp-platform	        	chrome/content/xulapp-platform/		platform
 
 locale	xulapp	en-US		chrome/locale/en-US/
+locale	xulapp	zh-TW		chrome/locale/zh-TW/
+locale	xulapp	zh		chrome/locale/zh-TW/
+
 
 skin		xulapp	default		chrome/skin/default/
 

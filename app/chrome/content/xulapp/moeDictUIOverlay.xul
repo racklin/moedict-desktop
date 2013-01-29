@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 
 <?xul-overlay href="chrome://xulapp/content/moeDictMainUI.xul"?>
+
 <overlay id="moeDictUIOverlay"
          xmlns:html="http://www.w3.org/1999/xhtml"
          xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
@@ -9,7 +10,7 @@
     <vbox id="appcontent" flex="1">
 
         <hbox id="addons-container" class="addons-container">
-            <radiogroup id="addons-selector" class="addons-selector" orient="horizontal" flex="1" style="margin:0px; padding:0px; -moz-appearance: listbox; background: white; padding-left: 20px; padding-right: 20px;">
+            <radiogroup id="addons-selector" class="addons-selector" orient="horizontal" flex="1" >
             </radiogroup>
         </hbox>
         <hbox id="addons-content-container" class="addons-content-container" flex="1">
