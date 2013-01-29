@@ -19,8 +19,6 @@ const WiktionaryUI = new function() {
             url = SEARCH_URL;
             url = url.replace('%KEYWORD%', keyword);
 
-            alert(url);
-
             browser.loadURI( url, null, null );
 
         }

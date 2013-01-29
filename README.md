@@ -14,10 +14,10 @@ Moe Dictionary 是基於 [XULApp StarterKit] 開發。
 下載執行檔案
 -----------------------------
 
-* [MacOSX Version](https://s3.amazonaws.com/xulapp/moe-dict/moe-dict.app-0.2.0.f34162f.dmg)
-* [Windows 32](https://s3.amazonaws.com/xulapp/moe-dict/moe-dict.app-0.2.0.f34162f-win32.zip)
-* [Linux i686](https://s3.amazonaws.com/xulapp/moe-dict/moe-dict.app-0.2.0.f34162f-linux-i686.tar.bz2)
-* [Linux x86_64](https://s3.amazonaws.com/xulapp/moe-dict/moe-dict.app-0.2.0.f34162f-linux-x86_64.tar.bz2)
+* [MacOSX Version](https://s3.amazonaws.com/xulapp/moe-dict/moe-dict.app-0.2.0.27e6324.dmg)
+* [Windows 32](https://s3.amazonaws.com/xulapp/moe-dict/moe-dict.app-0.2.0.27e6324-win32.zip)
+* [Linux i686](https://s3.amazonaws.com/xulapp/moe-dict/moe-dict.app-0.2.0.27e6324-linux-i686.tar.bz2)
+* [Linux x86_64](https://s3.amazonaws.com/xulapp/moe-dict/moe-dict.app-0.2.0.27e6324-linux-x86_64.tar.bz2)
 
 
 Build Moe Dictionary (Optional)
