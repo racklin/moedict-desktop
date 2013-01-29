@@ -1,7 +1,7 @@
 # Whether to build for various platforms
 BUILD_MAC=1
-BUILD_WIN32=0
-BUILD_LINUX=0
+BUILD_WIN32=1
+BUILD_LINUX=1
 
 # Whether or not to bundle plugins (in the plugins/*/ folders) with the distribution packages
 BUNDLE_PLUGINS=0
@@ -32,9 +32,9 @@ SIGNTOOL='C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin\signtool.exe'
 SIGNATURE_URL='https://www.example.com/'
 
 # If version is not specified on the command line, version is this prefix followed by the revision
-DEFAULT_VERSION_PREFIX="1.1.0."
+DEFAULT_VERSION_PREFIX="0.2.0."
 # Numeric version for OS X bundle
-VERSION_NUMERIC="0.1.0"
+VERSION_NUMERIC="0.2.0"
 
 # Directory for building
 BUILDDIR="/tmp/xulapp-build-`uuidgen | head -c 8`"
