@@ -1,29 +1,34 @@
 <?xml version="1.0"?>
+<?xml-stylesheet href="chrome://xulapp/skin/moe.css" type="text/css"?>
+
+<!DOCTYPE overlay [
+        <!ENTITY % globalDTD SYSTEM "chrome://global/locale/global.dtd"> %globalDTD;
+        <!ENTITY % moeDTD SYSTEM "chrome://xulapp/locale/moe.dtd" > %moeDTD;
+        ]>
 
 <overlay id="moeDictMainUIOverlay"
          xmlns:html="http://www.w3.org/1999/xhtml"
          xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
+    <radiogroup id="addons-selector">
+        <radio label="&moe.dictionaryCaption;" class="moe-dictinary-icon" position="1" id="moe-icon" oncommand="MoeDictMainUI.switchToAddonContainer('moe');" />
+    </radiogroup>
 
-    <script type="application/javascript" src="mozStorageAPI.js"/>
-    <script type="application/javascript" src="moeDictDatabase.js"/>
-    <script type="application/javascript" src="moeDictMainUI.js"/>
+    <deck id="addons-content-selector">
 
+        <vbox id="moe-ui-container" class="main-ui-container" flex="1" position="1">
 
-    <vbox id="appcontent" flex="1">
+            <hbox id="moe-search-container" class="search-container">
+                <textbox id="moe-search-keyword" size="40" type="search" searchbutton="true" oncommand="MoeDictMainUI.searchDict()" emptytext="&moe.searchEmptyText;" />
+            </hbox>
 
-        <hbox id="search-container">
-            <textbox id="search-keyword" size="20" type="search" searchbutton="true" oncommand="MoeDictMainUI.searchDict()"/>
-            <label value="ex. 混 or 混*" />
-        </hbox>
+            <hbox id="moe-content-container" flex="1" class="content-container">
 
-        <hbox id="content-container" flex="1">
-
-                <vbox id="entry-list-container" width="200">
+                <vbox id="moe-entry-list-container" class="entry-list-container" width="200" persist="width">
                     <groupbox flex="1">
-                        <caption id="entry-list-caption" label="" />
+                        <caption id="moe-entry-list-caption" class="entry-list-caption" label="" />
 
-                        <richlistbox id="entry-list" flex="1" onselect="MoeDictMainUI.entryListItemSelected(event);">
+                        <richlistbox id="moe-entry-list" class="entry-list" flex="1" onselect="MoeDictMainUI.entryListItemSelected(event);">
                         </richlistbox>
 
                     </groupbox>
@@ -31,24 +36,28 @@
                 <splitter collapse="before" resizeafter="farthest">
                     <grippy/>
                 </splitter>
-                <vbox flex="1" id="entry-detail-container">
+                <vbox flex="1" id="moe-entry-detail-container" class="entry-detail-container" style="overflow: auto;">
                     <hbox>
                         <vbox>
-                            <caption id="entry-detail-caption" style="font-size: 48px;"/>
+                            <caption id="moe-entry-detail-caption" class="entry-detail-caption" />
                         </vbox>
                         <vbox>
-                            <label id="entry-detail-bopomofo" />
-                            <label id="entry-detail-bopomofo2" />
-                            <label id="entry-detail-pinyin" />
+                            <label id="moe-entry-detail-bopomofo" class="entry-detail-bopomofo" />
+                            <label id="moe-entry-detail-bopomofo2" class="entry-detail-bopomofo2" />
+                            <label id="moe-entry-detail-pinyin" class="entry-detail-pinyin" />
                         </vbox>
                     </hbox>
-                    <vbox flex="1" id="entry-detail-definitions">
+                    <vbox flex="1" id="moe-entry-detail-definitions" class="entry-detail-definitions">
 
                     </vbox>
                 </vbox>
 
-        </hbox>
+            </hbox>
 
-    </vbox>
+        </vbox>
+
+    </deck>
+
+    <script type="application/javascript" src="moeDictMainUI.js"/>
 
 </overlay>

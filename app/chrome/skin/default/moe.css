@@ -1,0 +1,42 @@
+.addons-selector {
+    -moz-appearance: listbox;
+    background: white;
+    padding-left: 20px; padding-right: 20px;
+}
+
+.addons-selector radio {
+    -moz-appearance: none;
+    -moz-box-orient: vertical;
+    -moz-box-align: center;
+    min-width: 6em;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.addons-selector radio .radio-check {
+    display: none;
+}
+
+.addons-selector radio .radio-label-box {
+    -moz-box-orient: vertical;
+    -moz-box-align: center;
+}
+
+.addons-selector radio[selected] {
+    background-color: highlight;
+    color: highlighttext;
+}
+
+.entry-detail-caption {
+    font-size: 48px;
+}
+
+.entry-detail-definitions .definition-description {
+    -moz-user-select: -moz-all;
+}
+
+
+.moe-dictinary-icon {
+    -moz-appearance: none;
+    list-style-image: url(moe-dict-icon.png);
+}

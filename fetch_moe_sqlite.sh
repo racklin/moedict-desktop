@@ -4,10 +4,10 @@ SITE="http://kcwu.csie.org/~kcwu/tmp/moedict/development.sqlite3.bz2"
 
 CALLDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-if [ ! -d $CALLDIR/app/databases ]; then
-  mkdir $CALLDIR/app/databases
+if [ ! -d $CALLDIR/app/extensions/{213aaa92-69e7-11e2-83c0-68a86d302c50}/databases ]; then
+  mkdir $CALLDIR/app/extensions/{213aaa92-69e7-11e2-83c0-68a86d302c50}/databases
 fi
-cd $CALLDIR/app/databases
+cd $CALLDIR/app/extensions/{213aaa92-69e7-11e2-83c0-68a86d302c50}/databases
 
 curl -O $SITE
 

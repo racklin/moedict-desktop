@@ -8,14 +8,16 @@ Moe Dictionary 是基於 [XULApp StarterKit] 開發。
 軟體畫面
 -----------------------------
 ![ScreenShot](https://s3.amazonaws.com/xulapp/moe-dict/moe-dict-screenshot.png)
+![ScreenShot2](https://s3.amazonaws.com/xulapp/moe-dict/moe-dict-screenshot2.png)
+
 
 下載執行檔案
 -----------------------------
 
-* [MacOSX Version](https://s3.amazonaws.com/xulapp/moe-dict/moe-dict.app-1.1.0.0788082.dmg)
-* [Windows 32](https://s3.amazonaws.com/xulapp/moe-dict/moe-dict.app-1.1.0.0788082-win32.zip)
-* [Linux i686](https://s3.amazonaws.com/xulapp/moe-dict/moe-dict.app-1.1.0.0788082-linux-i686.tar.bz2)
-* [Linux x86_64](https://s3.amazonaws.com/xulapp/moe-dict/moe-dict.app-1.1.0.0788082-linux-x86_64.tar.bz2)
+* [MacOSX Version](https://s3.amazonaws.com/xulapp/moe-dict/moe-dict.app-0.2.0.f34162f.dmg)
+* [Windows 32](https://s3.amazonaws.com/xulapp/moe-dict/moe-dict.app-0.2.0.f34162f-win32.zip)
+* [Linux i686](https://s3.amazonaws.com/xulapp/moe-dict/moe-dict.app-0.2.0.f34162f-linux-i686.tar.bz2)
+* [Linux x86_64](https://s3.amazonaws.com/xulapp/moe-dict/moe-dict.app-0.2.0.f34162f-linux-x86_64.tar.bz2)
 
 
 Build Moe Dictionary (Optional)
@@ -33,6 +35,12 @@ Need Your Help
 1. Logo
 2. UI Layout and CSS
 
+ChangeLog
+-----------------------------
+0.2.0
+* Databases 移至獨立 Add-on ，以便未來可以單獨線上昇級詞典資料庫。
+* Wiktionary 維基詞典 Add-on ，方便其它開發者以此為藍本。
+* 修正查詢結果無法選取問題。
 
 License
 -----------------------------

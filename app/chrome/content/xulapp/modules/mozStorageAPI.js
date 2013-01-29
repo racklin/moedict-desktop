@@ -1,10 +1,12 @@
+this.EXPORTED_SYMBOLS  = ['MozStorageAPI'];
+
 Components.utils.import("resource://gre/modules/Services.jsm");
 Components.utils.import("resource://gre/modules/FileUtils.jsm");
 
 /**
  * MoeDict Model
  */
-const MozStorageAPI = new function() {
+this.MozStorageAPI = new function() {
 
     this.openDatabaseURL = function(databaseUrl) {
 

@@ -4,12 +4,34 @@
 const MoeDictMainUI = new function() {
 
     var _ = XULApp._;
+    var MoeDictDatabase = XULApp.MoeDictDatabase;
+
+    this.switchToAddonContainer = function(addon) {
+        var deckObj = document.getElementById('addons-content-selector') ;
+        var radioGroupObj = document.getElementById('addons-selector') ;
+
+        var deckId = addon + '-ui-container';
+        var iconId = addon + '-icon';
+
+        var addonDeckObj = document.getElementById(deckId) ;
+        var iconObj = document.getElementById(iconId) ;
+
+        if (addonDeckObj && iconObj) {
+
+            deckObj.selectedPanel = addonDeckObj;
+            radioGroupObj.selectedItem = iconObj;
+
+        }
+
+
+    }
 
     this.searchDict = function() {
 
-        var keyword = document.getElementById('search-keyword').value;
+        var keyword = document.getElementById('moe-search-keyword').value;
 
         keyword = keyword.replace('*', '%');
+
         var result = MoeDictDatabase.searchByTitle(keyword);
 
         this.resetList();
@@ -36,7 +58,7 @@ const MoeDictMainUI = new function() {
 
     this.resetList = function() {
 
-        var listObj = document.getElementById('entry-list');
+        var listObj = document.getElementById('moe-entry-list');
 
         // removeAll
         while (listObj.itemCount > 0) listObj.removeItemAt(0);
@@ -45,11 +67,11 @@ const MoeDictMainUI = new function() {
 
     this.resetDetail = function() {
 
-        var captionObj = document.getElementById('entry-detail-caption');
-        var bopomofoObj = document.getElementById('entry-detail-bopomofo');
-        var bopomofo2Obj = document.getElementById('entry-detail-bopomofo2');
-        var pinyinObj = document.getElementById('entry-detail-pinyin');
-        var definationsObj = document.getElementById('entry-detail-definitions');
+        var captionObj = document.getElementById('moe-entry-detail-caption');
+        var bopomofoObj = document.getElementById('moe-entry-detail-bopomofo');
+        var bopomofo2Obj = document.getElementById('moe-entry-detail-bopomofo2');
+        var pinyinObj = document.getElementById('moe-entry-detail-pinyin');
+        var definationsObj = document.getElementById('moe-entry-detail-definitions');
 
         captionObj.setAttribute('label', '');
         bopomofoObj.setAttribute('value', '');
@@ -67,8 +89,8 @@ const MoeDictMainUI = new function() {
         var count = _.size(result);
         var caption = "Result (" + count + ")";
 
-        var captionObj = document.getElementById('entry-list-caption');
-        var listObj = document.getElementById('entry-list');
+        var captionObj = document.getElementById('moe-entry-list-caption');
+        var listObj = document.getElementById('moe-entry-list');
 
         captionObj.setAttribute('label', caption);
 
@@ -89,11 +111,11 @@ const MoeDictMainUI = new function() {
 
     this.refreshEntryDetail = function(entry, definitions) {
 
-        var captionObj = document.getElementById('entry-detail-caption');
-        var bopomofoObj = document.getElementById('entry-detail-bopomofo');
-        var bopomofo2Obj = document.getElementById('entry-detail-bopomofo2');
-        var pinyinObj = document.getElementById('entry-detail-pinyin');
-        var definationsObj = document.getElementById('entry-detail-definitions');
+        var captionObj = document.getElementById('moe-entry-detail-caption');
+        var bopomofoObj = document.getElementById('moe-entry-detail-bopomofo');
+        var bopomofo2Obj = document.getElementById('moe-entry-detail-bopomofo2');
+        var pinyinObj = document.getElementById('moe-entry-detail-pinyin');
+        var definationsObj = document.getElementById('moe-entry-detail-definitions');
 
         captionObj.setAttribute('label', entry.title);
         bopomofoObj.setAttribute('value', entry.bopomofo);
@@ -108,9 +130,11 @@ const MoeDictMainUI = new function() {
             try {
                 var box = document.createElement('groupbox');
                 var typeCaption = document.createElement('caption');
-                var description = document.createElement('description');
-
+                typeCaption.className = 'definition-type-caption';
                 typeCaption.setAttribute('label', def.type);
+
+                var description = document.createElement('description');
+                description.className = 'definition-description';
 
                 var textnode = document.createTextNode(def.def);
                 description.appendChild(textnode);
