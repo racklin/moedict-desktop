@@ -7,17 +7,21 @@
 
     <script type="application/javascript" src="moeDictMainUI.js"/>
 
+    <radiogroup id="addons-selector">
+        <radio label="Xxxx" position="1" style="margin: 0px; padding: 0px; -moz-appearance: none; -moz-box-orient: vertical; background-color: highlight; color: highlighttext;" oncommand="alert('xxx');" />
+    </radiogroup>
 
-    <vbox id="appcontent" flex="1">
+    <deck id="addons-content-selector">
 
-        <hbox id="search-container">
-            <textbox id="search-keyword" size="20" type="search" searchbutton="true" oncommand="MoeDictMainUI.searchDict()"/>
-            <label value="ex. 混 or 混*" />
-        </hbox>
+        <vbox id="moe-main-ui-container" flex="1" position="1">
 
-        <hbox id="content-container" flex="1">
+            <hbox id="search-container">
+                <textbox id="search-keyword" size="40" type="search" searchbutton="true" oncommand="MoeDictMainUI.searchDict()" emptytext="ex. 混 or 混* or *混*" />
+            </hbox>
 
-                <vbox id="entry-list-container" width="200">
+            <hbox id="content-container" flex="1">
+
+                <vbox id="entry-list-container" width="200" persist="width">
                     <groupbox flex="1">
                         <caption id="entry-list-caption" label="" />
 
@@ -29,7 +33,7 @@
                 <splitter collapse="before" resizeafter="farthest">
                     <grippy/>
                 </splitter>
-                <vbox flex="1" id="entry-detail-container">
+                <vbox flex="1" id="entry-detail-container" style="overflow: auto;">
                     <hbox>
                         <vbox>
                             <caption id="entry-detail-caption" style="font-size: 48px;"/>
@@ -45,8 +49,11 @@
                     </vbox>
                 </vbox>
 
-        </hbox>
+            </hbox>
 
-    </vbox>
+        </vbox>
+
+    </deck>
+
 
 </overlay>

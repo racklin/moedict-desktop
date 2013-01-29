@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
 
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://xulapp/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://xulapp/skin/main.css" type="text/css"?>
+
 <?xul-overlay href="chrome://xulapp-platform/content/menuOverlay.xul"?>
 <?xul-overlay href="chrome://xulapp/content/mainUIOverlay.xul"?>
 
