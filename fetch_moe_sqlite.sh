@@ -9,7 +9,7 @@ if [ ! -d $CALLDIR/app/databases ]; then
 fi
 cd $CALLDIR/app/databases
 
-# curl -O $SITE
+curl -O $SITE
 
 if [ -f development.sqlite3 ]; then
     rm -f development.sqlite3;
