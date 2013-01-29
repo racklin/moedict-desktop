@@ -44,7 +44,7 @@ ChangeLog
 
 License
 -----------------------------
-Moe Dictionary are licensed under the [MPL License](http://mozilla.org/mpl/2.0/).
+Moe Dictionary are licensed under the [MPL License](http://mozilla.org/MPL/2.0/).
 See LICENSE for more details.
 
 
