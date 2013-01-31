@@ -1,0 +1,1 @@
+pref("xulapp.modules.moedictdatabase", "chrome://moedict/content/modules/moeDictDatabase.js");

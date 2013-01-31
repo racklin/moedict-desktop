@@ -6,7 +6,7 @@
         <em:id>{213aaa92-69e7-11e2-83c0-68a86d302c50}</em:id>
         <em:name>Moe Dictionary Databases</em:name>
         <em:version>0.0.1</em:version>
-        <em:description>Moe Dictionary SQLite3 Databases by kcwu</em:description>
+        <em:description>Moe Dictionary SQLite3 Databases by kcwu and  audreyt</em:description>
         <em:creator>Rack Lin(racklin@gmail.com)</em:creator>
         <em:homepageURL>https://github.com/racklin/</em:homepageURL>
         <em:type>2</em:type>
@@ -21,6 +21,15 @@
         <em:maxVersion>18.*</em:maxVersion>
       </Description>
     </em:targetApplication>
+
+    <em:localized>
+      <Description>
+        <em:locale>zh</em:locale>
+        <em:name>教育部重編國語辭典修訂本 主資料庫</em:name>
+        <em:description>教育部重編國語辭典修訂本 主資料庫 by kcwu and audreyt</em:description>
+      </Description>
+    </em:localized>
+
 
     </Description>
 </RDF>

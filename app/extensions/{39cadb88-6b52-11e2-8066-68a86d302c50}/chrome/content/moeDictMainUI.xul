@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
-<?xml-stylesheet href="chrome://xulapp/skin/moe.css" type="text/css"?>
+<?xml-stylesheet href="chrome://moedict/skin/moedict.css" type="text/css"?>
 
 <!DOCTYPE overlay [
         <!ENTITY % globalDTD SYSTEM "chrome://global/locale/global.dtd"> %globalDTD;
-        <!ENTITY % moeDTD SYSTEM "chrome://xulapp/locale/moe.dtd" > %moeDTD;
+        <!ENTITY % moeDTD SYSTEM "chrome://moedict/locale/moedict.dtd" > %moeDTD;
         ]>
 
 <overlay id="moeDictMainUIOverlay"
