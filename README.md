@@ -38,6 +38,7 @@ Need Your Help
 ChangeLog
 -----------------------------
 0.3.0
+* 使用 audreyt db2unicode.pl 將部份圖片字轉成 unicode 文字。
 * 修正在 Windows / Linux 下功能選項出現 radio 按鈕。
 * 新增 TonyQ 的教育部成語典。
 * 全部程式碼移至各別 Add-ons 中，未來方便獨立小模組昇級。
