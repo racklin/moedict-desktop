@@ -13,7 +13,7 @@
     margin-right: 4px;
 }
 
-.addons-selector radio .radio-check {
+.addons-selector radio .radio-check, .addons-selector radio .radio-spacer-box , .addons-selector radio .radio-check-box1 {
     display: none;
 }
 
