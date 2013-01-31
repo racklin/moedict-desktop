@@ -14,10 +14,10 @@ Moe Dictionary 是基於 [XULApp StarterKit] 開發。
 下載執行檔案
 -----------------------------
 
-* [MacOSX Version](https://s3.amazonaws.com/xulapp/moe-dict/moe-dict.app-0.2.0.27e6324.dmg)
-* [Windows 32](https://s3.amazonaws.com/xulapp/moe-dict/moe-dict.app-0.2.0.27e6324-win32.zip)
-* [Linux i686](https://s3.amazonaws.com/xulapp/moe-dict/moe-dict.app-0.2.0.27e6324-linux-i686.tar.bz2)
-* [Linux x86_64](https://s3.amazonaws.com/xulapp/moe-dict/moe-dict.app-0.2.0.27e6324-linux-x86_64.tar.bz2)
+* [MacOSX Version](https://s3.amazonaws.com/xulapp/moe-dict/moe-dict.app-0.3.0.66f595a.dmg)
+* [Windows 32](https://s3.amazonaws.com/xulapp/moe-dict/moe-dict.app-0.3.0.66f595a-win32.zip)
+* [Linux i686](https://s3.amazonaws.com/xulapp/moe-dict/moe-dict.app-0.3.0.66f595a-linux-i686.tar.bz2)
+* [Linux x86_64](https://s3.amazonaws.com/xulapp/moe-dict/moe-dict.app-0.3.0.66f595a-linux-x86_64.tar.bz2)
 
 
 Build Moe Dictionary (Optional)
@@ -37,6 +37,11 @@ Need Your Help
 
 ChangeLog
 -----------------------------
+0.3.0
+* 修正在 Windows / Linux 下功能選項出現 radio 按鈕。
+* 新增 TonyQ 的教育部成語典。
+* 全部程式碼移至各別 Add-ons 中，未來方便獨立小模組昇級。
+
 0.2.0
 * Databases 移至獨立 Add-on ，以便未來可以單獨線上昇級詞典資料庫。
 * Wiktionary 維基詞典 Add-on ，方便其它開發者以此為藍本。
