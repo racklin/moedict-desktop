@@ -3,10 +3,10 @@
      xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 
     <Description about="urn:mozilla:install-manifest">
-        <em:id>{39cadb88-6b52-11e2-8066-68a86d302c50}</em:id>
-        <em:name>Moe Dictionary SearchUI</em:name>
+        <em:id>wiktionary@xuldict.3du.tw</em:id>
+        <em:name>Wiktionary for Moe Dictionary App</em:name>
         <em:version>0.0.1</em:version>
-        <em:description>Moe Dictionary SearchUI</em:description>
+        <em:description>Wiktionary for Moe Dictionary App</em:description>
         <em:creator>Rack Lin(racklin@gmail.com)</em:creator>
         <em:homepageURL>https://github.com/racklin/</em:homepageURL>
         <em:type>2</em:type>
@@ -25,11 +25,10 @@
     <em:localized>
       <Description>
         <em:locale>zh</em:locale>
-        <em:name>教育部重編國語辭典修訂本查詢界面</em:name>
-        <em:description>教育部重編國語辭典修訂本查詢界面</em:description>
+        <em:name>維基字典查詢界面</em:name>
+        <em:description>維基字典查詢界面</em:description>
       </Description>
     </em:localized>
-
 
     </Description>
 </RDF>

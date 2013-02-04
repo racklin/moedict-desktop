@@ -3,7 +3,7 @@
      xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 
     <Description about="urn:mozilla:install-manifest">
-        <em:id>{ad4fa190-6b54-11e2-bac4-68a86d302c50}</em:id>
+        <em:id>moedict-idioms-ui@xuldict.3du.tw</em:id>
         <em:name>Moe Idioms Dictionary SearchUI</em:name>
         <em:version>0.0.1</em:version>
         <em:description>Moe Idioms Dictionary SearchUI</em:description>

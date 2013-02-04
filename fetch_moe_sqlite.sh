@@ -4,11 +4,11 @@ SITE="http://kcwu.csie.org/~kcwu/tmp/moedict/development.sqlite3.bz2"
 
 CALLDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-if [ ! -d $CALLDIR/app/extensions/{213aaa92-69e7-11e2-83c0-68a86d302c50}/databases ]; then
-  mkdir $CALLDIR/app/extensions/{213aaa92-69e7-11e2-83c0-68a86d302c50}/databases
+if [ ! -d $CALLDIR/app/extensions/moedict-db\@xuldict.3du.tw/databases ]; then
+  mkdir $CALLDIR/app/extensions/moedict-db\@xuldict.3du.tw/databases
 fi
 
-cd $CALLDIR/app/extensions/{213aaa92-69e7-11e2-83c0-68a86d302c50}/databases
+cd $CALLDIR/app/extensions/moedict-db\@xuldict.3du.tw/databases
 
 curl -O $SITE
 
@@ -47,11 +47,11 @@ cd $CALLDIR
 # idioms from tonyq
 echo "Create idioms dictionary"
 
-if [ ! -d $CALLDIR/app/extensions/{738ec4bc-6b50-11e2-a99c-68a86d302c50}/databases ]; then
-  mkdir $CALLDIR/app/extensions/{738ec4bc-6b50-11e2-a99c-68a86d302c50}/databases
+if [ ! -d $CALLDIR/app/extensions/moedict-idioms-db\@xuldict.3du.tw/databases ]; then
+  mkdir $CALLDIR/app/extensions/moedict-idioms-db\@xuldict.3du.tw/databases
 fi
 
-cd $CALLDIR/app/extensions/{738ec4bc-6b50-11e2-a99c-68a86d302c50}/databases
+cd $CALLDIR/app/extensions/moedict-idioms-db\@xuldict.3du.tw/databases
 
 sqlite3 idioms.sqlite3 < databases.schema
 
