@@ -1,0 +1,17 @@
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL);
+CREATE TABLE "dicts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "type" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
+CREATE TABLE "entries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "radical" varchar(255), "stroke_count" integer, "non_radical_stroke_count" integer, "dict_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
+CREATE TABLE "heteronyms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "entry_id" integer, "bopomofo" varchar(255), "bopomofo2" varchar(255), "pinyin" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
+CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
+INSERT INTO "users" VALUES(1,'albb0920@gmail.com','$2a$10$uby69V7uuW31tNkyBEcH6eHAz04nj1rZoNGfNvskos/nhoIsiUB5e',NULL,NULL,NULL,1,'2013-01-27 06:38:18.932501','2013-01-27 06:38:18.932501','127.0.0.1','127.0.0.1','2013-01-27 06:38:18.928008','2013-01-27 06:38:18.933235');
+CREATE TABLE "definitions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "heteronym_id" integer, "type" varchar(255), "def" varchar(255), "example" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "synonyms" varchar(255), "antonyms" varchar(255), "link_type" varchar(255), "link_id" integer, "source" varchar(255));
+CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version");
+CREATE INDEX "index_entries_on_dict_id" ON "entries" ("dict_id");
+CREATE INDEX "index_heteronyms_on_word_id" ON "heteronyms" ("entry_id");
+CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email");
+CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token");
+CREATE INDEX "index_definations_on_heteronym_id" ON "definitions" ("heteronym_id");
+CREATE INDEX "index_entries_title" ON "entries" ("title");
+COMMIT;

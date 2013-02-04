@@ -53,7 +53,7 @@ fi
 
 cd $CALLDIR/app/extensions/moedict-idioms-db\@xuldict.3du.tw/databases
 
-sqlite3 idioms.sqlite3 < databases.schema
+sqlite3 idioms.sqlite3 < ../databases.schema
 
 curl -O http://files.tonyq.org/data.sql
 
