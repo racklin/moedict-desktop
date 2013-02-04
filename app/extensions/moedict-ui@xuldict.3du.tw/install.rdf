@@ -3,10 +3,10 @@
      xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 
     <Description about="urn:mozilla:install-manifest">
-        <em:id>{738ec4bc-6b50-11e2-a99c-68a86d302c50}</em:id>
-        <em:name>Moe Dictionary Idioms Databases</em:name>
+        <em:id>moedict-ui@xuldict.3du.tw</em:id>
+        <em:name>Moe Dictionary SearchUI</em:name>
         <em:version>0.0.1</em:version>
-        <em:description>Moe Dictionary Idioms SQLite3 Databases by TonyQ</em:description>
+        <em:description>Moe Dictionary SearchUI</em:description>
         <em:creator>Rack Lin(racklin@gmail.com)</em:creator>
         <em:homepageURL>https://github.com/racklin/</em:homepageURL>
         <em:type>2</em:type>
@@ -25,10 +25,11 @@
     <em:localized>
       <Description>
         <em:locale>zh</em:locale>
-        <em:name>教育部成語典 主資料庫</em:name>
-        <em:description>教育部成語典 主資料庫 by TonyQ</em:description>
+        <em:name>教育部重編國語辭典修訂本查詢界面</em:name>
+        <em:description>教育部重編國語辭典修訂本查詢界面</em:description>
       </Description>
     </em:localized>
+
 
     </Description>
 </RDF>

@@ -3,7 +3,7 @@
      xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 
     <Description about="urn:mozilla:install-manifest">
-        <em:id>{213aaa92-69e7-11e2-83c0-68a86d302c50}</em:id>
+        <em:id>moedict-db@xuldict.3du.tw</em:id>
         <em:name>Moe Dictionary Databases</em:name>
         <em:version>0.0.1</em:version>
         <em:description>Moe Dictionary SQLite3 Databases by kcwu and  audreyt</em:description>
