@@ -16,7 +16,7 @@ pref("app.update.auto", true);
 //
 // See chart in nsUpdateService.js.in for more details
 //
-pref("app.update.mode", 2);
+pref("app.update.mode", 1);
 
 // If set to true, the Update Service will present no UI for any event.
 pref("app.update.silent", false);
@@ -24,15 +24,15 @@ pref("app.update.showInstalledUI", true);
 
 // Update service URL:
 // You do not need to use all the %VAR% parameters. Use what you need, %PRODUCT%,%VERSION%,%BUILD_ID%,%CHANNEL% for example
-pref("app.update.url", "https://www.example.com/app/update/%VERSION%/%BUILD_ID%/%BUILD_TARGET%/%LOCALE%/%CHANNEL%/%OS_VERSION%/update.xml");
+pref("app.update.url", "https://s3.amazonaws.com/xulapp/moe-dict/update_%VERSION%_%BUILD_TARGET%.xml");
 
 // URL user can browse to manually if for some reason all update installation
 // attempts fail.
-pref("app.update.url.manual", "http://www.example.com/app/");
+pref("app.update.url.manual", "https://raw.github.com/racklin/moe-dictionary-app/master/README.md");
 
 // A default value for the "More information about this update" link
 // supplied in the "An update is available" page of the update wizard.
-pref("app.update.url.details", "http://www.example.com/app/changelog");
+pref("app.update.url.details", "https://github.com/racklin/moe-dictionary-app#changelog");
 
 // User-settable override to app.update.url for testing purposes.
 //pref("app.update.url.override", "");
@@ -69,3 +69,6 @@ pref("app.update.incompatible.mode", 0);
 
 // update channel for this build
 pref("app.update.channel", "default");
+
+pref("extensions.update.enabled", true);
+pref("extensions.update.interval", 86400);

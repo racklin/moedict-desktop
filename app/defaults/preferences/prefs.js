@@ -68,3 +68,6 @@ pref("javascript.options.strict", false);
 pref("nglayout.debug.disable_xul_cache", true);
 pref("nglayout.debug.disable_xul_fastload", true);
 
+
+/* extensions manager */
+pref("extensions.ui.lastCategory", "addons://list/extension");

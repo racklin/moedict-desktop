@@ -1,7 +1,7 @@
 # Whether to build for various platforms
 BUILD_MAC=1
-BUILD_WIN32=1
-BUILD_LINUX=1
+BUILD_WIN32=0
+BUILD_LINUX=0
 
 # Whether or not to bundle plugins (in the plugins/*/ folders) with the distribution packages
 BUNDLE_PLUGINS=0

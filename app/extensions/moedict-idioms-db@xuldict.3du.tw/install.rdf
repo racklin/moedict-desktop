@@ -11,6 +11,8 @@
         <em:homepageURL>https://github.com/racklin/</em:homepageURL>
         <em:type>2</em:type>
         <em:unpack>true</em:unpack>
+        <em:updateURL>https://s3.amazonaws.com/xulapp/moe-dict/addons/moedict-idioms-db/update.xml</em:updateURL>
+        <em:updateKey>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCtiA0zlp+Qss3MXSydqAnz7e8MaHrNhc/vf2BD4W2sy9351mOY8ZXll7K5gFxGW9wx9F6YrVq2Xssgb+iCmxp+RgKc4uByQArBrKPoCWmNTn8hAwn9iEdipuTFxxjRZju/VIUJvkrtd5Y608Zd+5BJMirB+dFrhax4/uGG8JwPTwIDAQAB</em:updateKey>
 
     <!-- Gecko Toolkit
          version 1.9.0 and higher -->

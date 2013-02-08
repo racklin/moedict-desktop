@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<RDF:RDF xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
+    <RDF:Description about="urn:mozilla:moedict-db@xuldict.3du.tw">
+        <em:updates>
+            <RDF:Seq>
+
+                <RDF:li>
+                    <RDF:Description>
+                        <em:version>0.0.2</em:version>
+
+                        <em:targetApplication>
+                            <RDF:Description>
+                                <em:id>toolkit@mozilla.org</em:id>
+                                <em:minVersion>5.0</em:minVersion>
+                                <em:maxVersion>18.*</em:maxVersion>
+                                <em:updateLink>https://s3.amazonaws.com/xulapp/moe-dict/addons/moedict-db/moedict-db-0.0.2.xpi</em:updateLink>
+                                <em:updateHash>sha1:78fc1d2887eda35b4ad2e3a0b60120ca271ce6e6</em:updateHash>
+                            </RDF:Description>
+                        </em:targetApplication>
+
+                    </RDF:Description>
+                </RDF:li>
+
+            </RDF:Seq>
+        </em:updates>
+
+        <em:signature>MIGTMA0GCSqGSIb3DQEBBQUAA4GBAMO1O2gwSCCth1GwYMgscfaNakpN40PJfOWt
+            ub2HVdg8+OXMciF8d/9eVWm8eH/IxuxyZlmRZTs3O5tv9eWAY5uBCtqDf1WgTsGk
+            jrgZow1fITkZI7w0//C8eKdMLAtGueGfNs2IlTd5P/0KH/hf1rPc1wUqEqKCd4+L
+            BcVq13ad</em:signature>
+
+    </RDF:Description>
+</RDF:RDF>
