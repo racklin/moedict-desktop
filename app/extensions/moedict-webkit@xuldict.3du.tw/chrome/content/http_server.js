@@ -5,9 +5,10 @@
     var bindAddress = "127.0.0.1";
     var port = 54321;
 
-    function initHttpServer() {
+    const GREUtils = XULApp.GREUtils;
+    const NODE_STATIC_STARTUP_TIMEOUT = 5000;
 
-        const GREUtils = XULApp.GREUtils;
+    function initHttpServer() {
 
         var server = new XULApp.HttpServer();
 
@@ -31,11 +32,12 @@
 
         try {
             if (enable) {
-                server.start(port,  bindAddress);
+                server.start(port, bindAddress);
+                port = server.identity.primaryPort;
                 dump("HTTP server listening on ("+ bindAddress +"):"+server._port);
             }
         } catch(e) {
-            dump("Not initializing HTTP server");
+            dump("Not initializing HTTP server" + e);
         }
 
     }
@@ -48,9 +50,14 @@
             var webappBrowser = document.getElementById('webapp');
             if (webappBrowser) {
                 webappBrowser.homePage = homePage;
-                webappBrowser.loadURI(homePage);
+
+                // wait node-static startup timeout
+                setTimeout(function() {
+                    webappBrowser.loadURI(homePage);
+                    initilized = true;
+                }, NODE_STATIC_STARTUP_TIMEOUT);
+
             }
-            initilized = true;
         }
 
     });

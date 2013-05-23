@@ -4,7 +4,7 @@
     <Description about="urn:mozilla:install-manifest">
         <em:id>moedict-webkit@xuldict.3du.tw</em:id>
         <em:name>Moe-Dict Webkit for XULApp</em:name>
-        <em:version>1.1.1</em:version>
+        <em:version>1.2.1</em:version>
         <em:description>Moe-Dict Webkit for XULApp</em:description>
         <em:creator>Rack Lin(racklin@gmail.com)</em:creator>
         <em:homepageURL>https://github.com/racklin/</em:homepageURL>
@@ -17,7 +17,7 @@
       <Description>
         <em:id>toolkit@mozilla.org</em:id>
         <em:minVersion>1.9a1</em:minVersion>
-        <em:maxVersion>18.*</em:maxVersion>
+        <em:maxVersion>32.*</em:maxVersion>
       </Description>
     </em:targetApplication>
 

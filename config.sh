@@ -1,13 +1,14 @@
 # Whether to build for various platforms
 BUILD_MAC=1
 BUILD_WIN32=1
-BUILD_LINUX=1
+BUILD_LINUX=0
 
 # Whether or not to bundle plugins (in the plugins/*/ folders) with the distribution packages
 BUNDLE_PLUGINS=0
 
 # Version of Gecko to build with
 GECKO_VERSION="18.0"
+GECKO_VERSION="29.0.1"
 
 # Paths to Gecko runtimes
 MAC_RUNTIME_PATH="`pwd`/xulrunner/XUL.framework"

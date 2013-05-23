@@ -1,7 +1,0 @@
-{ "name": "moedict", "main": "index.html",
-  "window": {
-      "toolbar": false,
-      "frame": true,
-      "title": "萌典",
-      "always-on-top": false
-          } }

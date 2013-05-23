@@ -1,4 +1,4 @@
-/* -*- Mode: JavaScript; tab-width: 2; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
+/* -*- indent-tabs-mode: nil; js-indent-level: 2 -*- */
 /* vim:set ts=2 sw=2 sts=2 et: */
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -286,7 +286,7 @@ function toDateString(date)
   {
     var hrs = date.getUTCHours();
     var rv  = (hrs < 10) ? "0" + hrs : hrs;
-
+    
     var mins = date.getUTCMinutes();
     rv += ":";
     rv += (mins < 10) ? "0" + mins : mins;
@@ -471,7 +471,15 @@ nsHttpServer.prototype =
   onStopListening: function(socket, status)
   {
     dumpn(">>> shutting down server on port " + socket.port);
+    for (var n in this._connections) {
+      if (!this._connections[n]._requestStarted) {
+        this._connections[n].close();
+      }
+    }
     this._socketClosed = true;
+    if (this._hasOpenConnections()) {
+      dumpn("*** open connections!!!");
+    }
     if (!this._hasOpenConnections())
     {
       dumpn("*** no open connections, notifying async from onStopListening");
@@ -529,18 +537,52 @@ nsHttpServer.prototype =
         var loopback = false;
       }
 
-      var socket = new ServerSocket(this._port,
+      // When automatically selecting a port, sometimes the chosen port is
+      // "blocked" from clients. We don't want to use these ports because
+      // tests will intermittently fail. So, we simply keep trying to to
+      // get a server socket until a valid port is obtained. We limit
+      // ourselves to finite attempts just so we don't loop forever.
+      var ios = Cc["@mozilla.org/network/io-service;1"]
+                  .getService(Ci.nsIIOService);
+      var socket;
+      for (var i = 100; i; i--)
+      {
+        var temp = new ServerSocket(this._port,
                                     loopback, // true = localhost, false = everybody
                                     maxConnections);
+
+        var allowed = ios.allowPort(temp.port, "http");
+        if (!allowed)
+        {
+          dumpn(">>>Warning: obtained ServerSocket listens on a blocked " +
+                "port: " + temp.port);
+        }
+
+        if (!allowed && this._port == -1)
+        {
+          dumpn(">>>Throwing away ServerSocket with bad port.");
+          temp.close();
+          continue;
+        }
+
+        socket = temp;
+        break;
+      }
+
+      if (!socket) {
+        throw new Error("No socket server available. Are there no available ports?");
+      }
+
       dumpn(">>> listening on port " + socket.port + ", " + maxConnections +
             " pending connections");
       socket.asyncListen(this);
-      this._identity._initialize(port, host, true);
+      this._port = socket.port;
+      this._identity._initialize(socket.port, host, true);
       this._socket = socket;
     }
     catch (e)
     {
-      dumpn("!!! could not start server on port " + port + ": " + e);
+      dump("\n!!! could not start server on port " + port + ": " + e + "\n\n");
       throw Cr.NS_ERROR_NOT_AVAILABLE;
     }
   },
@@ -825,7 +867,7 @@ const HOST_REGEX =
                // toplabel
                "[a-z](?:[a-z0-9-]*[a-z0-9])?" +
              "|" +
-               // IPv4 address
+               // IPv4 address 
                "\\d+\\.\\d+\\.\\d+\\.\\d+" +
              ")$",
              "i");
@@ -1036,7 +1078,7 @@ ServerIdentity.prototype =
       // Not the default primary location, nothing special to do here
       this.remove("http", "127.0.0.1", this._defaultPort);
     }
-
+    
     // This is a *very* tricky bit of reasoning here; make absolutely sure the
     // tests for this code pass before you commit changes to it.
     if (this._primaryScheme == "http" &&
@@ -1132,14 +1174,25 @@ function Connection(input, output, server, port, outgoingPort, number)
    */
   this.request = null;
 
-  /** State variables for debugging. */
-  this._closed = this._processed = false;
+  /** This allows a connection to disambiguate between a peer initiating a
+   *  close and the socket being forced closed on shutdown.
+   */
+  this._closed = false;
+
+  /** State variable for debugging. */
+  this._processed = false;
+
+  /** whether or not 1st line of request has been received */
+  this._requestStarted = false; 
 }
 Connection.prototype =
 {
   /** Closes this connection's input/output streams. */
   close: function()
   {
+    if (this._closed)
+        return;
+
     dumpn("*** closing connection " + this.number +
           " on port " + this._outgoingPort);
 
@@ -1197,6 +1250,11 @@ Connection.prototype =
     return "<Connection(" + this.number +
            (this.request ? ", " + this.request.path : "") +"): " +
            (this._closed ? "closed" : "open") + ">";
+  },
+
+  requestStarted: function()
+  {
+    this._requestStarted = true;
   }
 };
 
@@ -1383,6 +1441,7 @@ RequestReader.prototype =
     {
       this._parseRequestLine(line.value);
       this._state = READER_IN_HEADERS;
+      this._connection.requestStarted();
       return true;
     }
     catch (e)
@@ -1468,7 +1527,7 @@ RequestReader.prototype =
         this._handleResponse();
         return true;
       }
-
+      
       return false;
     }
     catch (e)
@@ -2004,7 +2063,7 @@ function createHandlerFunc(handler)
  */
 function defaultIndexHandler(metadata, response)
 {
-  response.setHeader("Content-Type", "text/html", false);
+  response.setHeader("Content-Type", "text/html;charset=utf-8", false);
 
   var path = htmlEscape(decodeURI(metadata.path));
 
@@ -2172,7 +2231,7 @@ function maybeAddHeaders(file, metadata, response)
         code = status.substring(0, space);
         description = status.substring(space + 1, status.length);
       }
-
+    
       response.setStatusLine(metadata.httpVersion, parseInt(code, 10), description);
 
       line.value = "";
@@ -2727,7 +2786,7 @@ ServerHandler.prototype =
           // getting the line number where we evaluate the SJS file.  Don't
           // separate these two lines!
           var line = new Error().lineNumber;
-          Cu.evalInSandbox(sis.read(file.fileSize), s);
+          Cu.evalInSandbox(sis.read(file.fileSize), s, "latest");
         }
         catch (e)
         {
@@ -3104,7 +3163,7 @@ ServerHandler.prototype =
     dumpn("*** error in request: " + errorCode);
 
     this._handleError(errorCode, new Request(connection.port), response);
-  },
+  }, 
 
   /**
    * Handles a request which generates the given error code, using the
@@ -3214,7 +3273,7 @@ ServerHandler.prototype =
     {
       // none of the data in metadata is reliable, so hard-code everything here
       response.setStatusLine("1.1", 400, "Bad Request");
-      response.setHeader("Content-Type", "text/plain", false);
+      response.setHeader("Content-Type", "text/plain;charset=utf-8", false);
 
       var body = "Bad request\n";
       response.bodyOutputStream.write(body, body.length);
@@ -3222,7 +3281,7 @@ ServerHandler.prototype =
     403: function(metadata, response)
     {
       response.setStatusLine(metadata.httpVersion, 403, "Forbidden");
-      response.setHeader("Content-Type", "text/html", false);
+      response.setHeader("Content-Type", "text/html;charset=utf-8", false);
 
       var body = "<html>\
                     <head><title>403 Forbidden</title></head>\
@@ -3235,7 +3294,7 @@ ServerHandler.prototype =
     404: function(metadata, response)
     {
       response.setStatusLine(metadata.httpVersion, 404, "Not Found");
-      response.setHeader("Content-Type", "text/html", false);
+      response.setHeader("Content-Type", "text/html;charset=utf-8", false);
 
       var body = "<html>\
                     <head><title>404 Not Found</title></head>\
@@ -3255,7 +3314,7 @@ ServerHandler.prototype =
       response.setStatusLine(metadata.httpVersion,
                             416,
                             "Requested Range Not Satisfiable");
-      response.setHeader("Content-Type", "text/html", false);
+      response.setHeader("Content-Type", "text/html;charset=utf-8", false);
 
       var body = "<html>\
                    <head>\
@@ -3274,7 +3333,7 @@ ServerHandler.prototype =
       response.setStatusLine(metadata.httpVersion,
                              500,
                              "Internal Server Error");
-      response.setHeader("Content-Type", "text/html", false);
+      response.setHeader("Content-Type", "text/html;charset=utf-8", false);
 
       var body = "<html>\
                     <head><title>500 Internal Server Error</title></head>\
@@ -3289,7 +3348,7 @@ ServerHandler.prototype =
     501: function(metadata, response)
     {
       response.setStatusLine(metadata.httpVersion, 501, "Not Implemented");
-      response.setHeader("Content-Type", "text/html", false);
+      response.setHeader("Content-Type", "text/html;charset=utf-8", false);
 
       var body = "<html>\
                     <head><title>501 Not Implemented</title></head>\
@@ -3303,7 +3362,7 @@ ServerHandler.prototype =
     505: function(metadata, response)
     {
       response.setStatusLine("1.1", 505, "HTTP Version Not Supported");
-      response.setHeader("Content-Type", "text/html", false);
+      response.setHeader("Content-Type", "text/html;charset=utf-8", false);
 
       var body = "<html>\
                     <head><title>505 HTTP Version Not Supported</title></head>\
@@ -3325,7 +3384,7 @@ ServerHandler.prototype =
     "/": function(metadata, response)
     {
       response.setStatusLine(metadata.httpVersion, 200, "OK");
-      response.setHeader("Content-Type", "text/html", false);
+      response.setHeader("Content-Type", "text/html;charset=utf-8", false);
 
       var body = "<html>\
                     <head><title>httpd.js</title></head>\
@@ -3343,7 +3402,7 @@ ServerHandler.prototype =
     "/trace": function(metadata, response)
     {
       response.setStatusLine(metadata.httpVersion, 200, "OK");
-      response.setHeader("Content-Type", "text/plain", false);
+      response.setHeader("Content-Type", "text/plain;charset=utf-8", false);
 
       var body = "Request-URI: " +
                  metadata.scheme + "://" + metadata.host + ":" + metadata.port +
@@ -3353,7 +3412,7 @@ ServerHandler.prototype =
 
       if (metadata.queryString)
         body +=  "?" + metadata.queryString;
-
+        
       body += " HTTP/" + metadata.httpVersion + "\r\n";
 
       var headEnum = metadata.headers;
@@ -4906,17 +4965,17 @@ nsHttpHeaders.prototype =
     var value = headerUtils.normalizeFieldValue(fieldValue);
 
     // The following three headers are stored as arrays because their real-world
-    // syntax prevents joining individual headers into a single header using
+    // syntax prevents joining individual headers into a single header using 
     // ",".  See also <http://hg.mozilla.org/mozilla-central/diff/9b2a99adc05e/netwerk/protocol/http/src/nsHttpHeaderArray.cpp#l77>
     if (merge && name in this._headers)
     {
       if (name === "www-authenticate" ||
           name === "proxy-authenticate" ||
-          name === "set-cookie")
+          name === "set-cookie") 
       {
         this._headers[name].push(value);
       }
-      else
+      else 
       {
         this._headers[name][0] += "," + value;
         NS_ASSERT(this._headers[name].length === 1,
@@ -4939,8 +4998,8 @@ nsHttpHeaders.prototype =
    * @returns string
    *   the field value for the given header, possibly with non-semantic changes
    *   (i.e., leading/trailing whitespace stripped, whitespace runs replaced
-   *   with spaces, etc.) at the option of the implementation; multiple
-   *   instances of the header will be combined with a comma, except for
+   *   with spaces, etc.) at the option of the implementation; multiple 
+   *   instances of the header will be combined with a comma, except for 
    *   the three headers noted in the description of getHeaderValues
    */
   getHeader: function(fieldName)
@@ -5202,7 +5261,7 @@ Request.prototype =
   //
   // see nsIPropertyBag.getProperty
   //
-  getProperty: function(name)
+  getProperty: function(name) 
   {
     this._ensurePropertyBag();
     return this._bag.getProperty(name);
@@ -5224,7 +5283,7 @@ Request.prototype =
 
 
   // PRIVATE IMPLEMENTATION
-
+  
   /** Ensures a property bag has been created for ad-hoc behaviors. */
   _ensurePropertyBag: function()
   {

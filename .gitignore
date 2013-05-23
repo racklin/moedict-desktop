@@ -4,3 +4,4 @@ dist
 .idea
 app/extensions/moedict-db\@xuldict.3du.tw/databases/
 app/extensions/moedict-idioms-db\@xuldict.3du.tw/databases/
+app/extensions/nodejs@starterkit.xulapp.org
