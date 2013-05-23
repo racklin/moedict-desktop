@@ -549,7 +549,7 @@
         }, 'text');
       }
       bucket = bucketOf(id);
-      return fillBucket(id, bucket);
+      return fillBucket(id, bucket, cb);
     };
     setPinyinBindings = function(){
       return $('#result.prefer-pinyin-true .bopomofo .bpmf, #result.prefer-pinyin-false .bopomofo .pinyin').unbind('click').click(function(){
@@ -566,7 +566,7 @@
         $('#result .part-of-speech a').attr('href', null);
         setPinyinBindings();
         cacheLoading = false;
-        if (isCordova) {
+        if (isCordova && !DEBUGGING) {
           $('#result .playAudio').on('touchstart', function(){
             return $(this).click();
           });
@@ -600,14 +600,10 @@
         $('#result a[href]:not(.xref)').hoverIntent({
           timeout: 250,
           over: function(){
-            try {
-              return $(this).tooltip('open');
-            } catch (e$) {}
+            return $(this).tooltip('open');
           },
           out: function(){
-            try {
-              return $(this).tooltip('close');
-            } catch (e$) {}
+            return $(this).tooltip('close');
           }
         });
         return setTimeout(function(){
@@ -701,7 +697,7 @@
       C: '"combined"',
       D: '"dialects"'
     };
-    fillBucket = function(id, bucket){
+    fillBucket = function(id, bucket, cb){
       return GET("p" + LANG + "ck/" + bucket + ".txt", function(raw){
         var key, idx, part;
         key = escape(id);
@@ -712,7 +708,7 @@
         part = raw.slice(idx + key.length + 3);
         idx = part.indexOf('\n');
         part = part.slice(0, idx);
-        return fillJson(part, id);
+        return fillJson(part, id, cb);
       });
     };
     if (isCordova) {
