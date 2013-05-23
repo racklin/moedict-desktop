@@ -1,8 +1,0 @@
-content	wiktionary  chrome/content/
-skin	wiktionary	default		chrome/skin/default/
-
-locale	wiktionary	en-US		chrome/locale/en-US/
-locale	wiktionary	zh-TW		chrome/locale/zh-TW/
-locale	wiktionary	zh		chrome/locale/zh-TW/
-
-overlay chrome://xulapp/content/moeDictUIOverlay.xul chrome://wiktionary/content/overlay.xul

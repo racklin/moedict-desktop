@@ -1,0 +1,5 @@
+content webapp-wrapper chrome/content/
+content webapp webapp/
+
+overlay chrome://xulapp/content/mainUIOverlay.xul chrome://webapp-wrapper/content/overlay.xul
+

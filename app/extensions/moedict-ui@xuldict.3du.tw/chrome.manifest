@@ -1,8 +1,0 @@
-content	moedict  chrome/content/
-skin	moedict	default		chrome/skin/default/
-
-locale	moedict	en-US		chrome/locale/en-US/
-locale	moedict	zh-TW		chrome/locale/zh-TW/
-locale	moedict	zh		chrome/locale/zh-TW/
-
-overlay chrome://xulapp/content/moeDictUIOverlay.xul chrome://moedict/content/moeDictMainUI.xul

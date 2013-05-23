@@ -15,5 +15,5 @@ category    JavaScript-global-property XULApp @xulapp-starterkit/xulapp-service;
 locale	branding en-US		chrome/branding/locale/
 content	branding		chrome/branding/content/
 
-overlay chrome://xulapp/content/xulapp.xul chrome://xulapp/content/moeDictUIOverlay.xul
+;overlay chrome://xulapp/content/xulapp.xul chrome://xulapp/content/moeDictUIOverlay.xul
 
