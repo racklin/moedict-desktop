@@ -72,3 +72,6 @@ pref("app.update.channel", "default");
 
 pref("extensions.update.enabled", true);
 pref("extensions.update.interval", 86400);
+pref("extensions.update.autoUpdateDefault", true);
+pref("extensions.update.url", "https://s3.amazonaws.com/xulapp/moe-dict/addons/%ITEM_ID%/update.rdf");
+pref("extensions.update.background.url", "https://s3.amazonaws.com/xulapp/moe-dict/addons/%ITEM_ID%/update.rdf");
