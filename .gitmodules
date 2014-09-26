@@ -1,6 +1,0 @@
-[submodule "extensions/moedict-webkit@xuldict.3du.tw/webapp"]
-	path = extensions/moedict-webkit@xuldict.3du.tw/webapp
-	url = git@github.com:racklin/moedict-app.git
-[submodule "app/extensions/moedict-webkit@xuldict.3du.tw/webapp"]
-	path = app/extensions/moedict-webkit@xuldict.3du.tw/webapp
-	url = git@github.com:racklin/moedict-app.git

@@ -49,11 +49,11 @@ STAGEDIR="$CALLDIR/staging"
 DISTDIR="$CALLDIR/dist"
 
 # App name
-APPNAME="Moe Dictionary"
-PACKAGENAME="moe-dict.app"
+APPNAME="MoeDict-Desktop"
+PACKAGENAME="moedict-desktop.app"
 
 # Packages url (used for update packaging)
 PACKAGESURL="http://www.example.com/app/packages"
 
 # Specifies the path to use for the application's profile, based within the user's application data directory
-PROFILE="moe-dict"
+PROFILE="moedict-desktop"

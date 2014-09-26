@@ -242,6 +242,9 @@ if [ $BUILD_WIN32 == 1 ]; then
 
 	mv "$APPDIR/xulrunner/xulrunner-stub.exe" "$APPDIR/${APPNAME}.exe"
 
+        # copy replaced icon stub
+        cp -f "$CALLDIR/win/${APPNAME}.exe" "$APPDIR/${APPNAME}.exe"
+
 	# This used to be bug 722810, but that bug was actually fixed for Gecko 12. Now it's
 	# unfortunately broken again.
 	cp "$WIN32_RUNTIME_PATH/msvcp100.dll" \
