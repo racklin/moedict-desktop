@@ -12,8 +12,12 @@ component	{b0c32b3c-5964-11e2-90a5-000c29636bba}			components/xulapp-service.js
 contract	@xulapp-starterkit/xulapp-service;1			{b0c32b3c-5964-11e2-90a5-000c29636bba}
 category    JavaScript-global-property XULApp @xulapp-starterkit/xulapp-service;1
 
+component	{d9adcd75-1904-4732-9071-0b9e375f8200}			components/moedict-desktop-service.js
+contract	@moedict.tw/moedict-desktop-service;1			{d9adcd75-1904-4732-9071-0b9e375f8200}
+category    JavaScript-global-property moedictDesktop @moedict.tw/moedict-desktop-service;1
+
 locale	branding en-US		chrome/branding/locale/
 content	branding		chrome/branding/content/
 
-;overlay chrome://xulapp/content/xulapp.xul chrome://xulapp/content/moeDictUIOverlay.xul
+overlay chrome://xulapp/content/xulapp.xul chrome://xulapp/content/moedictUIOverlay.xul
 

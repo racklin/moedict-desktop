@@ -6,18 +6,16 @@ const loadSubScript = Cc["@mozilla.org/moz/jssubscript-loader;1"].getService(Ci.
 
 Components.utils.import("resource://gre/modules/XPCOMUtils.jsm");
 Components.utils.import("resource://gre/modules/Services.jsm");
+Components.utils.import("resource://gre/modules/Preferences.jsm");
 
 var isFirstLoadThisSession = true;
 var zContext = null;
 
 XULAppContext = function() {}
 XULAppContext.prototype = {
-
 	"Cc":Cc,
 	"Ci":Ci
-
 };
-
 
 /**
  * The class from which the XULApp global XPCOM context is constructed
@@ -46,43 +44,41 @@ function makeXULAppContext() {
     // setting free variable 'global' for XULApp
     zContext.XULApp['global'] = zContext.XULApp;
 
-    // Load GREUtils first
-    loadSubScript('chrome://xulapp/content/modules/GREUtils.js', zContext.XULApp);
-    zContext.XULApp.__exposedProps__.GREUtils = "r";
+    var moedictSettings = zContext.XULApp;
 
-    var GREUtils = zContext.XULApp.GREUtils;
+    // moedict-app settings
+    moedictSettings.enable = Preferences.get("extensions.moedictApp.httpServer.enabled", false);
+    moedictSettings.bindAddress = Preferences.get("extensions.moedictApp.httpServer.bindAddress", "127.0.0.1");
+    moedictSettings.port = Preferences.get("extensions.moedictApp.httpServer.port", 54321);
+    moedictSettings.__exposedProps__.enable = "r" ;
+    moedictSettings.__exposedProps__.bindAddress = "r" ;
+    moedictSettings.__exposedProps__.port = "r" ;
 
-    // Get 3rd-party registered modules
-    var prefsService = Services.prefs;
-    var prefXULAppBranch = prefsService.getBranch('xulapp.');
+    // voices pack settings
+    var moedictAppBranch = Services.prefs.getBranch('extensions.moedictApp.');
 
-    // load modules
-    prefXULAppBranch.getChildList('modules').forEach(function(key) {
-        var moduleUrl = GREUtils.Pref.getPref(key, prefXULAppBranch);
-        try {
-            delete zContext.XULApp['EXPORTED_SYMBOLS'];
-            loadSubScript(moduleUrl, zContext.XULApp);
+    var voiceSettings = {__exposedProps__:{}};
+    moedictAppBranch.getChildList('voices').forEach(function(key) {
+        var voice = key.split('.')[1];
+        if (voiceSettings[voice]) return;
 
-            // automatic added __exposedProps__ for module
-            if(zContext.XULApp['EXPORTED_SYMBOLS'] && zContext.XULApp['EXPORTED_SYMBOLS'].length >0) {
-                zContext.XULApp['EXPORTED_SYMBOLS'].forEach(function(exportSymbol) {
-                    zContext.XULApp.__exposedProps__[exportSymbol] = "r";
-                });
-            }
+        var pKey = 'extensions.moedictApp.voices.'+voice+'.path';
+        var voicePath = Preferences.get(pKey, null);
 
-        } catch (e) {
-            consoleLog("Error loading module: " +moduleUrl, zContext);
-            dump("Error loading module: " +moduleUrl + "\n");
+        if (voicePath) {
+            var url = moedictSettings.bindAddress+':'+moedictSettings.port+voicePath;
+            voiceSettings[voice] = url;
+            voiceSettings.__exposedProps__[voice] = "r";
         }
-    });
 
+    });
+    moedictSettings.voices = voiceSettings;
+    moedictSettings.__exposedProps__.voices = "r";
 }
 
 
-/**
- * The class representing the XULApp service
- */
-function XULAppService() {
+
+function MoedictDesktopService() {
     try {
         var start = Date.now();
 
@@ -92,8 +88,9 @@ function XULAppService() {
         isFirstLoadThisSession = false;
         this.wrappedJSObject = zContext.XULApp;
 
-        dump("Initialized in "+(Date.now() - start)+" ms" + "\n\n");
-        consoleLog("Initialized in "+(Date.now() - start)+" ms" + "\n\n");
+        dump("MoedictDesktop Service Initialized in "+(Date.now() - start)+" ms" + "\n\n");
+        consoleLog("MoedictDesktop Service Initialized in "+(Date.now() - start)+" ms" + "\n\n");
+
     } catch(e) {
         var msg = typeof e == 'string' ? e : e.name;
         dump(e + "\n\n");
@@ -102,17 +99,16 @@ function XULAppService() {
     }
 }
 
-XULAppService.prototype = {
-
-    contractID: '@xulapp-starterkit/xulapp-service;1',
-    classDescription: 'XULApp Service',
-    classID: Components.ID('{b0c32b3c-5964-11e2-90a5-000c29636bba}'),
+MoedictDesktopService.prototype = {
+    contractID: '@moedict.tw/moedict-desktop-service;1',
+    classDescription: 'MoedictDesktop Service',
+    classID: Components.ID('{d9adcd75-1904-4732-9071-0b9e375f8200}'),
     QueryInterface: XPCOMUtils.generateQI([Ci.nsIDOMGlobalPropertyInitializer, Ci.nsISupports]) ,
+
 
     init: function (aWindow) {
         return zContext.XULApp;
     }
-
 }
 
 /**
@@ -120,7 +116,7 @@ XULAppService.prototype = {
 * XPCOMUtils.generateNSGetModule is for Mozilla 1.9.2 (Firefox 3.6).
 */
 if (XPCOMUtils.generateNSGetFactory) {
-	var NSGetFactory = XPCOMUtils.generateNSGetFactory([XULAppService]);
+	var NSGetFactory = XPCOMUtils.generateNSGetFactory([MoedictDesktopService]);
 } else {
-	var NSGetModule = XPCOMUtils.generateNSGetModule([XULAppService]);
+	var NSGetModule = XPCOMUtils.generateNSGetModule([MoedictDesktopService]);
 }

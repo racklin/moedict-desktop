@@ -94,7 +94,7 @@ if [ -z "$UPDATE_CHANNEL" ]; then
     UPDATE_CHANNEL="default"
 fi
 
-echo "Building XULApp StarterKit"
+echo "Building Moedict Desktop"
 
 # Copy app directory
 cp -RH "$CALLDIR/app/"* "$BUILDDIR/"
