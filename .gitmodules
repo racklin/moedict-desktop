@@ -1,0 +1,3 @@
+[submodule "app/extensions/moedict-addon-app@moedict.tw"]
+	path = app/extensions/moedict-addon-app@moedict.tw
+	url = git@github.com:racklin/moedict-addon-app.git
