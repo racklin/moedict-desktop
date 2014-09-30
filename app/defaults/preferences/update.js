@@ -24,15 +24,15 @@ pref("app.update.showInstalledUI", true);
 
 // Update service URL:
 // You do not need to use all the %VAR% parameters. Use what you need, %PRODUCT%,%VERSION%,%BUILD_ID%,%CHANNEL% for example
-pref("app.update.url", "https://s3.amazonaws.com/xulapp/moe-dict/update_%VERSION%_%BUILD_TARGET%.xml");
+pref("app.update.url", "https://s3.amazonaws.com/xulapp/moedict-desktop/update_%VERSION%_%BUILD_TARGET%.xml");
 
 // URL user can browse to manually if for some reason all update installation
 // attempts fail.
-pref("app.update.url.manual", "https://raw.github.com/racklin/moe-dictionary-app/master/README.md");
+pref("app.update.url.manual", "https://racklin.github.io/moedict-desktop/");
 
 // A default value for the "More information about this update" link
 // supplied in the "An update is available" page of the update wizard.
-pref("app.update.url.details", "https://github.com/racklin/moe-dictionary-app#changelog");
+pref("app.update.url.details", "https://racklin.github.io/moedict-desktop/changelog.html");
 
 // User-settable override to app.update.url for testing purposes.
 //pref("app.update.url.override", "");
@@ -73,5 +73,5 @@ pref("app.update.channel", "default");
 pref("extensions.update.enabled", true);
 pref("extensions.update.interval", 86400);
 pref("extensions.update.autoUpdateDefault", true);
-pref("extensions.update.url", "https://s3.amazonaws.com/xulapp/moe-dict/addons/%ITEM_ID%/update.rdf");
-pref("extensions.update.background.url", "https://s3.amazonaws.com/xulapp/moe-dict/addons/%ITEM_ID%/update.rdf");
+pref("extensions.update.url", "https://s3.amazonaws.com/xulapp/moedict-desktop/addons/%ITEM_ID%/update.rdf");
+pref("extensions.update.background.url", "https://s3.amazonaws.com/xulapp/moedict-desktop/addons/%ITEM_ID%/update.rdf");

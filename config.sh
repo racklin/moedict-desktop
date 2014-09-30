@@ -32,9 +32,9 @@ SIGNTOOL='C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin\signtool.exe'
 SIGNATURE_URL='https://www.example.com/'
 
 # If version is not specified on the command line, version is this prefix followed by the revision
-DEFAULT_VERSION_PREFIX="1.0.0."
+DEFAULT_VERSION_PREFIX="1.0.1."
 # Numeric version for OS X bundle
-VERSION_NUMERIC="1.0.0"
+VERSION_NUMERIC="1.0.1"
 
 # Directory for building
 BUILDDIR="/tmp/xulapp-build-`uuidgen | head -c 8`"
@@ -48,7 +48,7 @@ STAGEDIR="$CALLDIR/staging"
 DISTDIR="$CALLDIR/dist"
 
 # App name
-APPNAME="MoeDict-Desktop"
+APPNAME="Moedict-Desktop"
 PACKAGENAME="moedict-desktop.app"
 
 # Packages url (used for update packaging)
