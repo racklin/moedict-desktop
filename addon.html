@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Moedict-desktop : 萌典桌面版（Windows / MacOSX / Linux）">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/moedict.css">
+
+    <title>Moedict-desktop</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="moedict-desktop" style="display: none;">
+            <a href="#" alt="回到萌典" onclick="backToMoedictDesktop();"><img src="images/remove.png"></a>
+        </header>
+        <header class="browser inner">
+          <a id="forkme_banner" href="https://github.com/racklin/moedict-desktop">View on GitHub</a>
+
+          <h1 id="project_title">Moedict-desktop</h1>
+          <h2 id="project_tagline">萌典桌面版（Windows / MacOSX / Linux）</h2>
+
+            <section id="nav">
+                <ul>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/download.html">下載(Download)</a>
+                    </li>
+                    <li class="active">
+                        <a href="/addon.html">擴充套件(Addon)</a>
+                    </li>
+                </ul>
+            </section>
+
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h2>
+<a name="intro" class="anchor" href="#intro"><span class="octicon octicon-link"></span></a>擴充套件安裝</h2>
+<p>可隨您需要，安裝擴充套件（如：離線語音包）。</p>
+
+<h4>moedict.tw 程式</h4>
+<div class="items">
+    <div class="item">
+        <div class="info">
+            <h3>moedict.tw For 桌面版 </h3>
+            <p>Version: 1.0.0 </p>
+        </div>
+        <div class="action">
+            <a id="moedict-addon-app@moedict.tw" version="1.0.0" href="https://s3.amazonaws.com/xulapp/moedict-desktop/addons/moedict-voice-h-1.0.0.xpi" class="download" onclick="return installAddon(this.href);">下載</a>
+        </div>
+    </div>
+</div>
+
+
+<h4>語音包</h4>
+<div class="items">
+    <div class="item">
+        <div class="info">
+            <h3>國語離線語音包</h3>
+            <p>(2.3 GB)   MD5: ed7e1e3c4070d4c528c321fda2662340</p>
+        </div>
+        <div class="action">
+            <a href="https://s3.amazonaws.com/xulapp/moedict-desktop/addons/moedict-voice-a-1.0.0.xpi" class="download" onclick="return installAddon(this.href);">下載</a>
+        </div>
+    </div>
+    <div class="item">
+        <div class="info">
+            <h3>台灣閩南語離線語音包</h3>
+            <p>(286.7 MB)   MD5: 4b9809b118fbe6ca60572cce355225f4</p>
+        </div>
+        <div class="action">
+            <a href="https://s3.amazonaws.com/xulapp/moedict-desktop/addons/moedict-voice-t-1.0.0.xpi" class="download" onclick="return installAddon(this.href);">下載</a>
+        </div>
+    </div>
+    <div class="item">
+        <div class="info">
+            <h3>台灣客家語離線語音包</h3>
+            <p>(1.0 MB)   MD5: 263d0c8a6fccb38dd57852b1b9849295</p>
+        </div>
+        <div class="action">
+            <a href="https://s3.amazonaws.com/xulapp/moedict-desktop/addons/moedict-voice-h-1.0.0.xpi" class="download" onclick="return installAddon(this.href);">下載</a>
+        </div>
+    </div>
+</div>
+
+<h4>網路資源包</h4>
+<div class="items">
+    <div class="item">
+        <div class="info">
+            <h3>維基多語詞典</h3>
+            <p>(10.4 KB)   MD5: 6f8d66a24a77aac2bc099dfe8b76d85a</p>
+        </div>
+        <div class="action">
+            <a href="https://xulapp.s3.amazonaws.com/moedict-desktop/addons/moedict-addon-wiktionary%40moedict.tw/moedict-wiktionary-0.0.2.xpi" class="download" onclick="return installAddon(this.href);">下載</a>
+        </div>
+    </div>
+</div>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="browser outer">
+      <footer class="inner">
+        <p class="copyright">Moedict-desktop maintained by <a href="https://github.com/racklin">racklin</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="javascripts/addon.js"></script>
+  </body>
+</html>

@@ -1,0 +1,156 @@
+#header_wrap {
+  background: #212121;
+}
+
+#header_wrap .inner {
+  padding: 50px 10px 10px 10px;
+}
+
+
+#nav {
+  /*background: #303030;*/
+  padding-top: 22px;
+  text-align: center;
+}
+
+#nav ul {
+  width: 540px;
+  margin: 0 auto;
+}
+
+#nav ul:after, #footer .foot-nav:after {
+  content: ' ';
+  display: block;
+  width: 0;
+  height: 0;
+  clear: both;
+}
+
+#nav ul li {
+  position: relative;
+  background: #212121;
+  display: block;
+  float: left;
+  font-size: 12px;
+  line-height: 12px;
+  padding-bottom: 20px;
+}
+
+#nav ul li.active:after {
+  top: 120%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(3, 3, 0, 0);
+  border-top-color: #212121;
+  border-width: 15px;
+  margin-left: -15px;
+}
+
+#nav ul li a {
+  padding: 0 12px;
+  font-weight: normal;
+  border-left: 1px solid rgba(109,109,109,.4);
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #cccccc;
+}
+
+#nav ul li.active a {
+  color: #80bd01;
+}
+
+a.download {
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 20px;
+  line-height: 20px;
+  background-color: #6b9e00;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-transition: .2s all ease-in-out;
+  -moz-transition: .2s all ease-in-out;
+  transition: .2s all ease-in-out;
+  color: #fff;
+  width: 120px;
+  display: block;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 10px;
+  font-weight: normal;
+  text-align: center;
+}
+
+a.installed {
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 20px;
+  line-height: 20px;
+  background-color: #c1c1c1;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-transition: .2s all ease-in-out;
+  -moz-transition: .2s all ease-in-out;
+  transition: .2s all ease-in-out;
+  color: #fff;
+  width: 120px;
+  display: block;
+  text-align:center;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 10px;
+  font-weight: normal;
+  text-align: center;
+}
+
+.items {
+    display: table;
+    width: 100%;
+}
+
+.item {
+    color: #999;
+    display: table-row;
+}
+
+.item .info {
+    overflow: hidden;
+    padding-left: 58px;
+    max-width:600px;
+}
+
+.item .action {
+    overflow: hidden;
+    padding-left: 58px;
+    max-width: 200px;
+}
+
+.item .info, .item .action {
+    border-top: 1px dotted #c9ddf2;
+    display: table-cell;
+    padding: 20px 0;
+    vertical-align: top;
+}
+
+.item h3 {
+    color: #C63717;
+    font-size:20px;
+    margin: 0 0 5px;
+}
+
+.item p {
+    margin: 0 0 5px;
+}
+
+.moedict-desktop img {
+    border: 0px;
+    padding: 0px;
+    -webkit-box-shadow: 0 0 0px #212121;
+    -moz-box-shadow: 0 0 0px #212121;
+    -ms-box-shadow: 0 0 0px #212121;
+    box-shadow: 0 0 0px #212121;
+}
