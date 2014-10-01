@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<overlay id="addonsManagerMonitorOverlay"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+
+    <vbox id="appcontent" flex="1">
+
+        <hbox id="addons-manager-monitor-container" class="addons-manager-monitor-container" hidden="true">
+            <vbox id="addons-manager-items-container" flex="1">
+                <grid id="addons-manager-monitor-grid">
+                    <columns>
+                      <column flex="1"/>
+                      <column flex="2"/>
+                      <column flex="1"/>
+                      <column flex="1"/>
+                    </columns>
+                    <rows id="addons-manager-monitor-rows">
+                    </rows>
+                  </grid>
+            </vbox>
+            <button label="X" oncommand="hideAddonsMonitor();" />
+        </hbox>
+
+    </vbox>
+
+    <script type="application/javascript" src="addons_manager_monitor.js"/>
+
+</overlay>

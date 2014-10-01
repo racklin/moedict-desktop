@@ -24,7 +24,7 @@ pref("app.update.showInstalledUI", true);
 
 // Update service URL:
 // You do not need to use all the %VAR% parameters. Use what you need, %PRODUCT%,%VERSION%,%BUILD_ID%,%CHANNEL% for example
-pref("app.update.url", "https://s3.amazonaws.com/xulapp/moedict-desktop/update_%VERSION%_%BUILD_TARGET%.xml");
+pref("app.update.url", "https://xulapp.s3.amazonaws.com/moedict-desktop/update_%VERSION%_%BUILD_TARGET%.xml");
 
 // URL user can browse to manually if for some reason all update installation
 // attempts fail.
@@ -73,5 +73,12 @@ pref("app.update.channel", "default");
 pref("extensions.update.enabled", true);
 pref("extensions.update.interval", 86400);
 pref("extensions.update.autoUpdateDefault", true);
-pref("extensions.update.url", "https://s3.amazonaws.com/xulapp/moedict-desktop/addons/%ITEM_ID%/update.rdf");
-pref("extensions.update.background.url", "https://s3.amazonaws.com/xulapp/moedict-desktop/addons/%ITEM_ID%/update.rdf");
+pref("extensions.update.url", "https://xulapp.s3.amazonaws.com/moedict-desktop/addons/%ITEM_ID%/update.rdf");
+pref("extensions.update.background.url", "https://xulapp.s3.amazonaws.com/moedict-desktop/addons/%ITEM_ID%/update.rdf");
+
+pref('extensions.moedictApp.whitelists.xulapps3', 'xulapp.s3.amazonaws.com');
+pref('extensions.moedictApp.whitelists.racklingithub', 'racklin.github.io');
+pref('extensions.moedictApp.whitelists.localhost', '127.0.0.1');
+pref('extensions.moedictApp.whitelists.localhost1', 'localhost');
+pref('extensions.moedictApp.whitelists.moedict', 'app.moedict.org');
+

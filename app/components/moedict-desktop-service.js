@@ -7,6 +7,7 @@ const loadSubScript = Cc["@mozilla.org/moz/jssubscript-loader;1"].getService(Ci.
 Components.utils.import("resource://gre/modules/XPCOMUtils.jsm");
 Components.utils.import("resource://gre/modules/Services.jsm");
 Components.utils.import("resource://gre/modules/Preferences.jsm");
+Components.utils.import("resource://gre/modules/AddonManager.jsm");
 
 var isFirstLoadThisSession = true;
 var zContext = null;
@@ -74,6 +75,62 @@ function makeXULAppContext() {
     });
     moedictSettings.voices = voiceSettings;
     moedictSettings.__exposedProps__.voices = "r";
+
+    // supports install addons from url
+    var whitelists = [];
+    moedictAppBranch.getChildList('whitelists').forEach(function(key) {
+        var pKey = 'extensions.moedictApp.' + key;
+        var list = Preferences.get(pKey, null);
+        if(list) {
+            whitelists.push(list);
+        }
+    });
+
+    function isFunction(functionToCheck) {
+        var getType = {};
+        return functionToCheck && getType.toString.call(functionToCheck) === '[object Function]';
+    }
+
+    // expose installAddonForURL
+    moedictSettings.installAddonForURL = function(url, callback) {
+
+        var urlHost = url.match(/^http[s]*:\/\/([^/|^:]*)/)[1];
+
+        if (!urlHost || whitelists.indexOf(urlHost) == -1) return ;
+
+        if (!callback || !isFunction(callback)) {
+            callback = function(aInstall) {
+                aInstall.install();
+            };
+        }
+        AddonManager.getInstallForURL(url, callback, "application/x-xpinstall");
+    };
+    moedictSettings.__exposedProps__.installAddonForURL = "r";
+
+    // exposed installed addons
+    var getInstalledAddons = function(callback) {
+        if (!callback || !isFunction(callback)) {
+            callback = function(addons) {
+            };
+        }
+        AddonManager.getAddonsByTypes(["extension"], function(addons) {
+            var installedAddons = [];
+            addons.forEach(function(aAddon) {
+                dump("addon = " + aAddon.name + ", " + aAddon.type + "\n");
+                var d = {id: aAddon.id, name: aAddon.name, version: aAddon.version};
+                d.__exposedProps__ = {id: "r", name: "r", version: "r"};
+                installedAddons.push(d);
+            });
+            callback.call(null, installedAddons);
+        });
+    };
+
+    moedictSettings.installedAddons = [];
+    getInstalledAddons(function(d) {
+        moedictSettings.installedAddons = d;
+    });
+    moedictSettings.__exposedProps__.installedAddons = "r";
+
 }
 
 

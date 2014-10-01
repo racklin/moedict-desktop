@@ -20,4 +20,5 @@ locale	branding en-US		chrome/branding/locale/
 content	branding		chrome/branding/content/
 
 overlay chrome://xulapp/content/xulapp.xul chrome://xulapp/content/moedictUIOverlay.xul
+overlay chrome://xulapp/content/xulapp.xul chrome://xulapp/content/addons_manager_monitor.xul
 

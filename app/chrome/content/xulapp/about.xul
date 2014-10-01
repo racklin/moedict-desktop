@@ -17,12 +17,28 @@
 	ondialogaccept="return true;">
 
 	<script src="helpers.js"/>
+	<script src="about.js"/>
 
 	<vbox id="aboutcontent">
-		<label id="name" value="&brandShortName;"/>
-		<hbox>
-			<label class="app-text-link url" href="&vendorUrl;" value="&vendorUrl;" onclick="gotoUrl('&vendorUrl;')"/>
-		</hbox>
-		<label id="copyright" value="&logoCopyright;"/>
+            <hbox>
+                <label id="name" value="&brandShortName;" />
+                <label id="version" value="" />
+            </hbox>
+            <hbox>
+                    <label class="app-text-link url" href="&vendorUrl;" value="&vendorUrl;" onclick="gotoUrl('&vendorUrl;')"/>
+            </hbox>
+            <vbox>
+                <description>
+                    萌典共收錄十六萬筆國語、兩萬筆台語、一萬四千筆客語條目，並支援「自動完成」功能及「%_ *? ^.$」等萬用字元。
+                </description>
+
+                <description>
+                    定義裡的每個字詞都可以點擊連到說明。
+                </description>
+                <description>
+                    源碼、其他平台版本、API 及原始資料等，均可在 3du.tw 取得。
+                </description>
+            </vbox>
+            <label id="copyright" value="&logoCopyright;"/>
 	</vbox>
 </dialog>

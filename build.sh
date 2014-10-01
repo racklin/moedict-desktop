@@ -102,6 +102,7 @@ REV=`git log -n 1 --pretty='format:%h'`
 
 if [ -z "$VERSION" ]; then
     VERSION="$DEFAULT_VERSION_PREFIX$REV"
+    VERSION="$DEFAULT_VERSION_PREFIX"
 fi
 
 # Append version directory to DISTDIR
