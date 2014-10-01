@@ -5,19 +5,9 @@
 Moe Dictionary 是基於 [XULApp StarterKit] 開發。
 
 
-軟體畫面
+軟體畫面及下載
 -----------------------------
-![ScreenShot](https://s3.amazonaws.com/xulapp/moe-dict/moe-dict-screenshot.png)
-![ScreenShot2](https://s3.amazonaws.com/xulapp/moe-dict/moe-dict-screenshot2.png)
-
-
-下載執行檔案
------------------------------
-
-* [MacOSX Version](https://s3.amazonaws.com/xulapp/moe-dict/moe-dict.app-0.3.0.66f595a.dmg)
-* [Windows 32](https://s3.amazonaws.com/xulapp/moe-dict/moe-dict.app-0.3.0.66f595a-win32.zip)
-* [Linux i686](https://s3.amazonaws.com/xulapp/moe-dict/moe-dict.app-0.3.0.66f595a-linux-i686.tar.bz2)
-* [Linux x86_64](https://s3.amazonaws.com/xulapp/moe-dict/moe-dict.app-0.3.0.66f595a-linux-x86_64.tar.bz2)
+請連結至官方網站 ![Moedict Desktop](https://racklin.github.io/moedict-desktop/)
 
 
 Build Moe Dictionary (Optional)
@@ -37,6 +27,14 @@ Need Your Help
 
 ChangeLog
 -----------------------------
+1.1.0
+* 支援線上昇級
+* 支援擴充套件安裝
+
+1.0.0
+* 使用 moedict.tw 離線 App 版本主程式。
+* Gecko Engine 昇級至 29.0.1
+
 0.3.0
 * 使用 audreyt db2unicode.pl 將部份圖片字轉成 unicode 文字。
 * 修正在 Windows / Linux 下功能選項出現 radio 按鈕。
