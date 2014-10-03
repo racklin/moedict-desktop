@@ -43,6 +43,10 @@ function initAddonsLink() {
                 link.innerHTML = '已安裝';
                 link.disabled = true;
                 continue;
+            } else {
+                link.className ='update';
+                link.innerHTML = '＋昇級';
+                continue;
             }
         }
 

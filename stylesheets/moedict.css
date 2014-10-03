@@ -107,6 +107,27 @@ a.installed {
   text-align: center;
 }
 
+a.update {
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 20px;
+  line-height: 20px;
+  background-color: #6A0206;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-transition: .2s all ease-in-out;
+  -moz-transition: .2s all ease-in-out;
+  transition: .2s all ease-in-out;
+  color: #fff;
+  width: 120px;
+  display: block;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 10px;
+  font-weight: normal;
+  text-align: center;
+}
+
 .items {
     display: table;
     width: 100%;
