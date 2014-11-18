@@ -7,7 +7,7 @@ Moe Dictionary 是基於 [XULApp StarterKit] 開發。
 
 軟體畫面及下載
 -----------------------------
-請連結至官方網站 ![Moedict Desktop](https://racklin.github.io/moedict-desktop/)
+請連結至官方網站 [Moedict Desktop](https://racklin.github.io/moedict-desktop/)
 
 
 Build Moe Dictionary (Optional)
