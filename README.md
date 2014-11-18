@@ -14,9 +14,9 @@ Build Moe Dictionary (Optional)
 -----------------------------
 
 1. Fork this project and clone.
-2. Change BUILD_MAC / BUILD_LINUX / BUILD_WIN32 variables in config.sh to setting operating systems you want to build.
-3. run fetch_xulrunner.sh to downloading xulrunner runtime from ftp.mozilla.org.[ONLY ONCE]
-4. run fetch_moe_sqlite.sh to downloading dictionary databases.[ONLY ONCE]
+2. Change BUILD_MAC / BUILD_LINUX / BUILD_WIN32 variables in `config.sh` to setting operating systems you want to build.
+3. run `fetch_xulrunner.sh` to downloading xulrunner runtime from ftp.mozilla.org.[ONLY ONCE]
+4. run `git submodule update --init --recursive` to update all submodules.
 5. run build.sh
 
 
