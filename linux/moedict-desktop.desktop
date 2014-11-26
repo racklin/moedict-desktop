@@ -1,0 +1,63 @@
+#!/usr/bin/env xdg-open
+# "Moedict Desktop" application launcher
+################################################################################
+# Conforming to freedesktop.org "Desktop Entry Specification" revision 1.1
+# http://standards.freedesktop.org/desktop-entry-spec/1.1
+# 
+# Conforming to freedesktop.org "Desktop Menu Specification" revision 1.1
+# http://standards.freedesktop.org/menu-spec/1.1
+################################################################################
+# ## Installation
+# ### User-wide
+# (Not tested)
+# 
+# ### System-wide
+# Install this file to /usr/local/share/applications directory as root with root:root ownership and 0644 permission settings
+# 
+# ## Notes
+# * Current implementation requires Moedict Desktop main executable(xulapp) and other resources to be located under /opt/moedict-desktop directory.
+################################################################################
+[Desktop Entry]
+# Required keys
+Type=Application
+Name[zh_TW]=萌典桌面版
+Name[zh_HK]=萌典桌面版
+Name[zh_CN]=萌典桌面版
+Name[en]=Moedict Desktop
+Name=萌典桌面版
+
+# Optional keys
+## Version of the Desktop Entry Specification that the desktop entry conforms with.  ("Desktop Entry Specification" revision 1.1 requires this key to be "1.0" with unknown reason)
+Version=1.0
+
+GenericName[zh_TW]=中文辭典
+GenericName[zh_HK]=中文辭典
+GenericName[zh_CN]=中文辞典
+GenericName[en]=Chinese dictionary
+GenericName=中文辭典
+
+## Tooltip for the desktop entry
+## TODO: Add "en" locale version as fallback
+Comment[zh_TW]=萌典是中華民國教育部「重編國語辭典（修訂本）」、「臺灣閩南語常用詞辭典」及「臺灣客家語常用詞辭典」等字典的整合應用軟體。
+Comment[zh_HK]=萌典是中華民國教育部「重編國語辭典（修訂本）」、「臺灣閩南語常用詞辭典」及「臺灣客家語常用詞辭典」等字典的整合應用軟體。
+Comment[zh_CN]=萌典是中华民国教育部“重编国语辞典（修订本）”、“台湾闽南语常用词辞典”及“台湾客家语常用词辞典”等字典的整合应用软体。
+Comment=萌典是中華民國教育部「重編國語辭典（修訂本）」、「臺灣閩南語常用詞辭典」及「臺灣客家語常用詞辭典」等字典的整合應用軟體。
+
+## TODO: Use "Icon theme spec - Icon lookup" mechanism and allow themeing instead
+## http://standards.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html#icon_lookup
+Icon=/opt/moedict-desktop/chrome/icons/default/default256.png
+
+## Path to an executable file on disk used to determine if the program is actually installed.
+TryExec=/opt/moedict-desktop/xulapp
+
+Exec=/opt/moedict-desktop/xulapp 
+
+## Categories in which the entry should be shown in a menu (for possible values see the Desktop Menu Specification).
+## http://standards.freedesktop.org/menu-spec/latest/apa.html
+Categories=Education;Office;Dictionary;Languages;
+
+Keywords=g0v.tw;零時政府;3du.tw;中華民國教育部;OpenData;開放資料;
+
+# Non-standard keys
+X-Official-Website-URL=https://github.com/racklin/moedict-desktop
+X-Issue-tracker-URL=https://github.com/racklin/moedict-desktop/issues
