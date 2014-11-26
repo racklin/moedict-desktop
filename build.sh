@@ -345,15 +345,16 @@ if [ $BUILD_LINUX == 1 ]; then
 		# Merge xulrunner and relevant assets
 		cp -R "$BUILDDIR/"* "$APPDIR"
 		cp -r "$RUNTIME_PATH" "$APPDIR/xulrunner"
-		mv "$APPDIR/xulrunner/xulrunner-stub" "$APPDIR/$MODULE"
-		chmod 755 "$APPDIR/$MODULE"
+		mv "$APPDIR/xulrunner/xulrunner-stub" "$APPDIR/${APPNAME}-bin"
+		chmod 755 "$APPDIR/${APPNAME}-bin"
 
 		# Delete extraneous files
 		find "$APPDIR" -depth -type d -name .git -exec rm -rf {} \;
 		find "$APPDIR" \( -name .DS_Store -or -name update.rdf \) -exec rm -f {} \;
 
 		# Add run-$MODULE.sh
-		cp "$CALLDIR/linux/run-$MODULE.sh" "$APPDIR/run-$MODULE.sh"
+		cp "$CALLDIR/linux/run-$MODULE.sh" "$APPDIR/${APPNAME}"
+		chmod 755 "$APPDIR/${APPNAME}"
 
 		# Move icons, so that updater.png doesn't fail
 		mv "$APPDIR/xulrunner/icons" "$APPDIR/icons"
