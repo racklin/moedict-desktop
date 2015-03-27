@@ -78,6 +78,8 @@ pref("extensions.update.background.url", "https://xulapp.s3.amazonaws.com/moedic
 
 pref('extensions.moedictApp.whitelists.xulapps3', 'xulapp.s3.amazonaws.com');
 pref('extensions.moedictApp.whitelists.racklingithub', 'racklin.github.io');
+pref('extensions.moedictApp.whitelists.github', 'github.com');
+pref('extensions.moedictApp.whitelists.racklingithub', 'dl.dropboxusercontent.com');
 pref('extensions.moedictApp.whitelists.localhost', '127.0.0.1');
 pref('extensions.moedictApp.whitelists.localhost1', 'localhost');
 pref('extensions.moedictApp.whitelists.moedict', 'app.moedict.org');

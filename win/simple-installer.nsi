@@ -7,7 +7,7 @@
 Name "MoeDictDesktop"
 
 ; NSIS 2.46 using big5 charset
-!define DisplayName "µÞ¨å®à­±ª©"
+!define DisplayName "Moedict-Desktop"
 !define InstName "MoedictDesktop"
 
 ; The file to write

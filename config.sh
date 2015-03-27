@@ -32,9 +32,9 @@ SIGNTOOL='C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin\signtool.exe'
 SIGNATURE_URL='https://www.example.com/'
 
 # If version is not specified on the command line, version is this prefix followed by the revision
-DEFAULT_VERSION_PREFIX="1.1.0"
+DEFAULT_VERSION_PREFIX="1.1.1"
 # Numeric version for OS X bundle
-VERSION_NUMERIC="1.1.0"
+VERSION_NUMERIC="1.1.1"
 
 # Directory for building
 BUILDDIR="/tmp/xulapp-build-`uuidgen | head -c 8`"
@@ -55,4 +55,4 @@ PACKAGENAME="moedict-desktop.app"
 PACKAGESURL="http://www.example.com/app/packages"
 
 # Specifies the path to use for the application's profile, based within the user's application data directory
-PROFILE="moedict-desktop"
+PROFILE="moedict-desktop-1.1"

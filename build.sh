@@ -115,6 +115,9 @@ if [ ! -d "$DISTDIR" ]; then mkdir -p "$DISTDIR"; fi
 find "$BUILDDIR/chrome/" -depth -type d -name .git -exec rm -rf {} \;
 find "$BUILDDIR/chrome/" -name .DS_Store -exec rm -f {} \;
 
+# DELETE webapp manifest.appcache
+rm -f $BUILDDIR/extensions/moedict-addon-app@moedict.tw/webapp/manifest.appcache
+
 # Zip chrome into JAR
 cd "$BUILDDIR/chrome"
 # Checkout failed -- bail
