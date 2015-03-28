@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<RDF:RDF xmlns:em="http://www.mozilla.org/2004/em-rdf#"
+         xmlns:NC="http://home.netscape.com/NC-rdf#"
+         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <RDF:Description RDF:about="urn:mozilla:extension:moedict-addon-app@moedict.tw"
+                   em:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBACCslbJxcRR1M35YG5uxyDqxeA9Kh+v6HtQCeWJECI+tla3N/GawEG83f1XsZM7GhWakGcdfqVk2oWXzhALr1W8uRjX0XII1s4QDA/Wtot0pz5zyIYz2DZjN38kbbtDJ9A06+WtCboa2KVs19bt5WVzNDdhBeNctHeSc2dSrWV/9">
+    <em:updates RDF:resource="rdf:#$RakTF3"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="rdf:#$VakTF5"
+                   em:id="toolkit@mozilla.org"
+                   em:minVersion="1.9a1"
+                   em:maxVersion="32.*"
+                   em:updateLink="https://github.com/racklin/moedict-addon-app/releases/download/1.1.1/moedict-app-1.1.1.xpi"
+                   em:updateHash="sha1:cf83aecf09b9f913094f66b58536af7ca7aae235" />
+  <RDF:Seq RDF:about="rdf:#$RakTF3">
+    <RDF:li RDF:resource="rdf:#$SakTF5"/>
+  </RDF:Seq>
+  <RDF:Description RDF:about="rdf:#$SakTF5"
+                   em:version="1.1.1">
+    <em:targetApplication RDF:resource="rdf:#$VakTF5"/>
+  </RDF:Description>
+</RDF:RDF>
