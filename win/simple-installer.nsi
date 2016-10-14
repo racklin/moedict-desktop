@@ -3,11 +3,19 @@
 
 ;--------------------------------
 
-; The name of the installer
-Name "MoeDictDesktop"
+; load lang to zhTW
+LoadLanguageFile "${NSISDIR}\Contrib\Language files\TradChinese.nlf"
+LoadLanguageFile "${NSISDIR}\Contrib\Language files\English.nlf"
 
-; NSIS 2.46 using big5 charset
-!define DisplayName "�ި�ୱ��"
+; Define Application-Name
+LangString AppName ${LANG_ENGLISH} "MoeDictDesktop"
+LangString AppName ${LANG_TRADCHINESE} "萌典-桌面離線版"
+
+; The name of the installer
+Name "$(AppName)"
+
+; NSIS 3.0 
+!define DisplayName "$(AppName)"
 !define InstName "MoedictDesktop"
 
 ; The file to write
@@ -23,8 +31,6 @@ InstallDirRegKey HKLM "Software\NSIS_${InstName}" "Install_Dir"
 ; Request application privileges for Windows Vista
 RequestExecutionLevel admin
 
-; load lang to zhTW
-LoadLanguageFile "${NSISDIR}\Contrib\Language files\TradChinese.nlf"
 
 ;--------------------------------
 
@@ -63,9 +69,9 @@ SectionEnd
 ; Optional section (can be disabled by the user)
 Section "Shortcuts"
 
-  CreateDirectory "$SMPROGRAMS\${InstName}"
-  CreateShortCut "$SMPROGRAMS\${InstName}\Uninstall.lnk" "$INSTDIR\uninstall.exe" "" "$INSTDIR\uninstall.exe" 0
-  CreateShortCut "$SMPROGRAMS\${InstName}\${DisplayName}.lnk" "$INSTDIR\MoeDict-Desktop.exe" "" "$INSTDIR\MoeDict-Desktop.exe" 0
+  CreateDirectory "$SMPROGRAMS\${DisplayName}"
+  CreateShortCut "$SMPROGRAMS\${DisplayName}\Uninstall.lnk" "$INSTDIR\uninstall.exe" "" "$INSTDIR\uninstall.exe" 0
+  CreateShortCut "$SMPROGRAMS\${DisplayName}\${DisplayName}.lnk" "$INSTDIR\MoeDict-Desktop.exe" "" "$INSTDIR\MoeDict-Desktop.exe" 0
   CreateShortCut "$Desktop\${DisplayName}.lnk" "$INSTDIR\MoeDict-Desktop.exe" "" "$INSTDIR\MoeDict-Desktop.exe" 0
 
 SectionEnd
@@ -85,11 +91,11 @@ Section "Uninstall"
   Delete $INSTDIR\uninstall.exe
 
   ; Remove shortcuts, if any
-  Delete "$SMPROGRAMS\${InstName}\*.*"
+  Delete "$SMPROGRAMS\${DisplayName}\*.*"
   Delete "$Desktop\${DisplayName}.lnk"
 
   ; Remove directories used
-  RMDir /r "$SMPROGRAMS\${InstName}"
+  RMDir /r "$SMPROGRAMS\${DisplayName}"
   RMDir /r "$INSTDIR"
   
   ; Remote XULRunner Profile
